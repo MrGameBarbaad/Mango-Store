@@ -91,19 +91,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Discord Button (Gold/Orange) */
-.discord-btn {
-    background-color: #f39c12;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    font-size: 11px;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
 .giftcard-input-group {
     display: flex;
     background: #1a1a1e;
@@ -129,34 +116,11 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Update these specific sections in your design.css */
-
-.info-title {
-    font-size: 18px;
-    color: #ff9f43; /* Matches the FireMC header color exactly */
-    margin: 5px 0 15px 0;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-}
-
 /* Red Buttons - Fixed size and flatter red */
 .button-row {
     display: flex;
     gap: 6px;
     margin-top: 20px;
-}
-
-.red-btn {
-    flex: 1;
-    background-color: #ff4757; /* The exact FireMC red */
-    color: white;
-    border: none;
-    padding: 10px 2px;
-    font-size: 10px;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: none; /* Keeps it from being all caps if not wanted */
 }
 
 /* Giftcard Area - The "Inset" Dark Box */
@@ -198,4 +162,36 @@ body {
     font-weight: 700;
     cursor: pointer;
     text-transform: lowercase; /* Matches 'check' in screenshot */
+}
+
+.info-title {
+    font-size: 17px; /* Slightly smaller to match screenshot density */
+    color: #ff9f43;
+    margin: 4px 0 12px 0;
+    font-weight: 800;
+}
+
+/* Red Buttons - Making them "Chunky" and taller instead of long */
+.red-btn {
+    flex: 1;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 12px 5px; /* Increased vertical padding from 10 to 12 */
+    font-size: 10.5px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Discord Button - Matches FireMC size */
+.discord-btn {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px 18px; /* Bigger padding */
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin: 10px 0 20px 0;
 }
