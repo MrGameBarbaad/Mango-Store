@@ -285,17 +285,6 @@ body {
 .popup-content h3 { color: #ff4757; font-size: 14px; margin-bottom: 10px; }
 .popup-content p { color: #999; font-size: 11px; line-height: 1.5; }
 
-/* Center both Login and Cart Popups */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
 .login-card, .cart-card {
     background: #2b2b32;
     padding: 35px;
@@ -323,58 +312,73 @@ body {
 .empty-title { color: #ff4757; margin: 40px 0 10px 0; font-size: 14px;}
 .close-popup { position: absolute; top: 15px; right: 15px; color: #666; cursor: pointer; font-size: 20px;}
 
-/* Push cart to the absolute corner */
+
+
+
+
+
+
+/* 1. Precise Cart Positioning */
 .cart-wrapper { 
     position: absolute; 
-    top: 15px; 
-    right: 15px; /* Moved closer to the edge */
+    top: 20px; 
+    right: 20px; /* Aligns to the far right of the header container */
     z-index: 100; 
 }
 
-/* Fixed Bedrock Toggle Animation */
+/* 2. Fixed Bedrock Toggle Animation */
 .toggle-switch {
     width: 65px;
-    height: 24px;
+    height: 25px;
     background: #1a1a1e;
-    border-radius: 3px;
+    border-radius: 4px;
     position: relative;
     cursor: pointer;
-    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 0 10px;
-    font-size: 10px;
-    font-weight: bold;
+    overflow: hidden; /* Keeps the slider inside the box */
 }
 
 #toggle-slider {
     position: absolute;
     top: 2px;
-    width: 30px; /* Adjusted width */
-    height: 20px;
+    width: 30px; 
+    height: 21px;
     border-radius: 2px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; /* Smooth sliding motion */
 }
 
-/* Ensure the 'Yes' state slides fully to the right edge */
+/* State: NO (Left side) */
 .slider-red { 
     left: 2px; 
     background: #ff4757; 
 }
 
+/* State: YES (Right side) - Fixed position to prevent sticking */
 .slider-green { 
-    left: 33px; /* Precise calculation to prevent sticking in middle */
+    left: 33px; 
     background: #2ecc71; 
 }
 
 #bedrock-status {
     position: relative;
-    z-index: 5;
+    z-index: 5; /* Sits on top of the sliding color box */
     color: #fff;
     font-size: 10px;
     font-weight: bold;
-    line-height: 24px;
     width: 100%;
     text-align: center;
     pointer-events: none;
+    line-height: 25px;
+}
+
+/* 3. Centered Modal Fix */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center; /* Vertical Center */
+    justify-content: center; /* Horizontal Center */
+    z-index: 1000;
 }
