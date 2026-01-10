@@ -117,6 +117,37 @@
     </div>
 </main>
     </div>
+    
+function showLogin() {
+    document.getElementById('login-popup').classList.remove('hidden');
+}
+
+function hideLogin() {
+    document.getElementById('login-popup').classList.add('hidden');
+}
+
+function performLogin() {
+    const user = document.getElementById('mc-username').value;
+    if(user) {
+        document.getElementById('display-name').innerText = user;
+        document.getElementById('user-head').src = `https://minotar.net/helm/${user}/32.png`;
+        
+        // Switch views
+        document.getElementById('cart-logged-out').classList.add('hidden');
+        document.getElementById('cart-logged-in').classList.remove('hidden');
+        hideLogin();
+    }
+}
+
+function toggleCartMenu() {
+    document.getElementById('cart-menu').classList.toggle('hidden');
+}
+
+function performLogout() {
+    document.getElementById('cart-logged-out').classList.remove('hidden');
+    document.getElementById('cart-logged-in').classList.add('hidden');
+    document.getElementById('cart-menu').classList.add('hidden');
+}
 
 </body>
 </html>
