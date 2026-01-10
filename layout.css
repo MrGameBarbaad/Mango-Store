@@ -1,14 +1,16 @@
+/* layout.css */
 body {
     min-width: 1100px; 
-    overflow-x: auto;
+    background-color: #1a1a1d;
     margin: 0;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: 280px 800px; /* Specific widths for better centering */
-    width: 1100px;                      /* Total width matches your viewport */
-    margin: 40px auto;                  /* This centers the whole block */
+    /* This sets the exact width of sidebar and main content */
+    grid-template-columns: 280px 800px; 
+    width: 1100px;      /* Total width of the layout */
+    margin: 40px auto;  /* 'auto' is what pushes it to the center */
     gap: 20px;
 }
 
