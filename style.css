@@ -1,36 +1,45 @@
-/* General Setup */
 body {
     background-color: #1a1a1d;
-    color: #e0e0e0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #cccccc;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding-bottom: 50px;
 }
 
-/* Header & Logo Scaling */
-.hero {
+/* Header & Banner Fix */
+.main-hero {
     background-size: cover;
     background-position: center;
+    padding: 20px 0 60px 0;
     text-align: center;
-    padding: 60px 20px;
-    border-bottom: 3px solid #25252b;
+    border-bottom: 2px solid #25252b;
 }
 
-.logo-img {
-    max-width: 300px; /* Limits size so it doesn't take over the screen */
-    height: auto;
+.header-logo {
+    max-width: 250px; /* Forces logo to reasonable size */
     margin: 20px 0;
 }
 
-/* Layout Columns */
-.main-wrapper {
-    display: flex; /* Makes sidebar and content sit side-by-side */
-    max-width: 1000px;
-    margin: 30px auto;
-    gap: 20px;
+.status-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
 }
 
-/* Sidebar Styling */
+.status-box { display: flex; align-items: center; gap: 10px; text-align: left; }
+.status-box .val { display: block; color: #f39c12; font-weight: bold; font-size: 14px; }
+.status-box .label { font-size: 10px; color: white; }
+.status-box .icon { width: 35px; }
+
+/* Layout Structure */
+.page-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 30px auto;
+    gap: 25px;
+    padding: 0 15px;
+}
+
 .sidebar {
     width: 280px;
     background: #25252b;
@@ -39,41 +48,67 @@ body {
     height: fit-content;
 }
 
-.cat-link {
+.menu-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px;
+    gap: 12px;
+    padding: 15px;
     border-bottom: 1px solid #333;
     font-size: 14px;
+    color: white;
+}
+
+.menu-item img { width: 22px; }
+
+/* Main Content */
+.main-content { flex: 1; }
+
+.package-card {
+    background: #25252b;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.green-border { border: 2px solid #2ecc71; box-shadow: 0 0 10px rgba(46, 204, 113, 0.2); }
+
+.gold-title { color: #f39c12; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
+.red-title { color: #e74c3c; font-size: 13px; margin-top: 30px; }
+
+/* Buttons */
+.discord-btn { background: #e67e22; border: none; padding: 10px 20px; color: white; border-radius: 4px; cursor: pointer; }
+.red-pill { background: #e74c3c; border: none; padding: 8px 15px; color: white; border-radius: 4px; font-size: 11px; cursor: pointer; }
+.policy-links { display: flex; gap: 8px; margin-top: 15px; }
+
+/* Giftcard Box */
+.giftcard-section {
+    background: #25252b;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+
+.gift-input-row { display: flex; gap: 0; }
+.gift-input-row input {
+    background: #1a1a1d;
+    border: 1px solid #333;
+    padding: 10px;
+    color: white;
+    flex: 1;
+}
+
+.check-btn {
+    background: #2ecc71;
+    border: none;
+    color: white;
+    padding: 0 20px;
     cursor: pointer;
 }
 
-/* Content Area */
-.main-content {
-    flex: 1; /* Takes up the remaining space */
-}
-
-.package-item {
-    background: #25252b;
-    padding: 20px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.green-glow { border-left: 5px solid #2ecc71; border: 1px solid #2ecc71; }
-
-/* Text & Colors */
-.gold-label { color: #f39c12; font-size: 13px; font-weight: bold; }
-.red-label { color: #e74c3c; font-size: 13px; margin-top: 30px; }
-
-/* Buttons */
-.btn-orange { background: #e67e22; border: none; color: white; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
-.btn-red { background: #e74c3c; border: none; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; cursor: pointer; }
-.footer-btns { display: flex; gap: 8px; margin-top: 15px; }
-
-/* Mobile Responsiveness */
+/* Mobile View */
 @media (max-width: 768px) {
-    .main-wrapper { flex-direction: column; padding: 10px; }
-    .sidebar { width: auto; }
+    .page-container { flex-direction: column; }
+    .status-container { flex-direction: column; gap: 20px; }
 }
