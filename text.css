@@ -1,39 +1,40 @@
 /* text.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@600&display=swap');
 
 .sidebar-header {
-    color: #ff9f43; /* FireMC Orange */
+    color: #ff9f43; /* FireMC Orange/Gold */
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    padding-left: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    padding-left: 15px;
     text-transform: uppercase;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    padding: 12px 15px;
-    margin-bottom: 5px;
-    color: #cbd5e0; /* Light grey text */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    color: #d1d1d1; 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s ease;
     border-radius: 4px;
 }
 
 .nav-item:hover {
     background-color: rgba(255, 255, 255, 0.05);
-    color: white;
+    color: #ffffff;
+    transform: translateX(5px); /* Slight slide effect like pro stores */
 }
 
 .cat-icon {
-    width: 30px;
-    height: 30px;
+    width: 32px;  /* Adjust size to match FireMC */
+    height: 32px;
     margin-right: 15px;
     object-fit: contain;
 }
