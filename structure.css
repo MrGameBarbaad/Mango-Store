@@ -11,17 +11,17 @@ body {
     min-width: 280px;
 }
 
-.wrapper {
-    display: grid;
-    /* Reduced the second column from 800px to 680px */
-    grid-template-columns: 280px 680px; 
-    width: 1000px; /* Reduced total width from 1100px */
-    margin: 40px auto !important; 
-    gap: 40px; /* Increased gap to push content away from sidebar */
-    align-items: start;
-}
-
 .main-content {
     width: 100%;
     max-width: 680px; /* This prevents the "long button" look */
+}
+
+.wrapper {
+    display: grid;
+    /* We change 800px to 680px to stop the stretching */
+    grid-template-columns: 280px 680px; 
+    width: 1000px; /* Total width reduced from 1100 to 1000 */
+    margin: 40px auto !important; 
+    gap: 40px; /* Increased gap to push content away from sidebar */
+    align-items: start;
 }
