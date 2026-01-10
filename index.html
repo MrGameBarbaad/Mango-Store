@@ -4,150 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1100">
     <title>MangoMC Store</title>
-    <link rel="stylesheet" href="header.css?v=200">
-    <link rel="stylesheet" href="structure.css?v=200">
-    <link rel="stylesheet" href="design.css?v=200">
-    <link rel="stylesheet" href="text.css?v=200">
+    <link rel="stylesheet" href="header.css?v=201">
+    <link rel="stylesheet" href="structure.css?v=201">
+    <link rel="stylesheet" href="design.css?v=201">
+    <link rel="stylesheet" href="text.css?v=201">
 </head>
 <body>
 
-    <div class="cart-wrapper">
-    <div id="cart-logged-out" class="cart-button" onclick="showLogin()">
-        <span class="cart-icon">🛒</span>
-        <span class="cart-text">0 items - 0.00 USD</span>
-    </div>
-
-    <div id="cart-logged-in" class="cart-button hidden" onclick="toggleCartMenu()">
-        <img src="https://minotar.net/helm/Steve/32.png" id="user-head" class="user-head">
-        <span class="username" id="display-name">Steve</span>
-        <span class="cart-count">0</span>
-    </div>
-
-    <div id="login-popup" class="modal hidden">
-        <div class="modal-content">
-            <h3>Login to our store</h3>
-            <p>Please enter your Minecraft username to continue.</p>
-            <input type="text" id="mc-username" placeholder="Minecraft Username">
-            <button class="login-submit" onclick="performLogin()">Login</button>
-            <button class="close-link" onclick="hideLogin()">Close</button>
-        </div>
-    </div>
-
-    <div id="cart-menu" class="cart-dropdown hidden">
-        <div class="dropdown-header">Your Basket</div>
-        <div class="empty-msg">Your basket is empty.</div>
-        <button class="checkout-btn">Checkout</button>
-        <button class="logout-btn" onclick="performLogout()">Logout</button>
-    </div>
-</div>
-
     <header class="top-section">
+        <div class="cart-wrapper">
+            <div id="cart-logged-out" class="cart-guest" onclick="showLogin()">
+                <div class="guest-info">
+                    <span class="guest-title">Guest</span>
+                    <span class="guest-sub">CLICK TO LOGIN</span>
+                </div>
+                <div class="guest-avatar">
+                    <img src="https://minotar.net/helm/MHF_Question/32.png">
+                </div>
+            </div>
+
+            <div id="cart-logged-in" class="cart-user hidden" onclick="toggleCartMenu()">
+                <div class="user-info">
+                    <span class="user-title" id="display-name">Username</span>
+                    <span class="user-sub">EMPTY CART</span>
+                </div>
+                <div class="user-avatar">
+                    <img src="https://minotar.net/helm/Steve/32.png" id="user-head">
+                    <span class="cart-badge">0</span>
+                </div>
+            </div>
+
+            <div id="cart-menu" class="cart-popup hidden">
+                <div class="popup-header">
+                    <img src="" id="popup-head" class="mini-head">
+                    <div class="popup-user-details">
+                        <span id="popup-name">Player</span>
+                        <div class="popup-actions">
+                            <span class="logout-link" onclick="performLogout()">Logout</span>
+                            <span class="currency-tag">Currency: <b>USD</b></span>
+                        </div>
+                    </div>
+                    <span class="close-x" onclick="toggleCartMenu()">×</span>
+                </div>
+                <div class="popup-body">
+                    <h4 class="empty-title">EMPTY CART</h4>
+                    <p>Keep adding items to cart and check back here to complete your purchase!</p>
+                </div>
+            </div>
+        </div>
+
         <div class="logo-container">
             <img src="logo.png" class="logo">
         </div>
     </header>
 
+    <div id="login-popup" class="login-modal hidden">
+        <div class="login-box">
+            <h3>Please enter your username to continue</h3>
+            <p>Usernames can't contain spaces, they can have any letter and number, and they are Case Sensitive.</p>
+            
+            <div class="input-container">
+                <img src="https://minotar.net/helm/MHF_Question/32.png" class="input-head">
+                <input type="text" id="mc-username" placeholder="Minecraft Username">
+            </div>
+
+            <button class="continue-btn" onclick="performLogin()">CONTINUE</button>
+            <div class="bedrock-toggle">
+                Bedrock user? <span class="no-tag">No</span>
+            </div>
+        </div>
+    </div>
+
     <div class="wrapper">
         <aside class="sidebar">
              <div class="sidebar-header">SELECT A CATEGORY</div>
-    
                  <div class="nav-item">
-                 <img src="coins.png" class="cat-icon">
-                 <span>Coins</span>
+                     <img src="coins.png" class="cat-icon">
+                     <span>Coins</span>
                  </div>
-
                  <div class="nav-item">
-                 <img src="ranks.png" class="cat-icon">
-                 <span>Ranks</span>
+                     <img src="ranks.png" class="cat-icon">
+                     <span>Ranks</span>
                  </div>
-
                  <div class="nav-item">
-                 <img src="kits.png" class="cat-icon">
-                 <span>Kits</span>
+                     <img src="kits.png" class="cat-icon">
+                     <span>Kits</span>
                  </div>
-
                 <div class="nav-item">
-                <img src="dollars.png" class="cat-icon">
-                <span>Dollars</span>
-             </div>
+                    <img src="dollars.png" class="cat-icon">
+                    <span>Dollars</span>
+                </div>
         </aside>
 
         <main class="main-content">
-    <h2 class="main-title">FEATURED PACKAGES</h2>
-
-    <div class="package-row" style="border-color: #4caf50;">
-        <img src="ranks.png" class="package-img">
-        <div class="package-info">
-            <span class="package-name" style="color: #4caf50;">GOD Rank (+3600 Coins)</span>
-            <span class="package-price">27.00 USD</span>
-        </div>
-    </div>
-
-    <div class="info-section">
-        <div class="info-header">WELCOME TO THE OFFICIAL</div>
-        <h2 class="info-title">MANGOMC STORE</h2>
-        
-        <p>MangoMC is a free-to-play Public Minecraft Server. Items can be purchased here to enhance gameplay and grant the player various special perks. <br><strong>To begin, please select a category from the sidebar.</strong></p>
-        
-        <div class="info-header" style="margin-top: 25px;">SUPPORT</div>
-        <p>Need any questions answered before checkout? Waited more than 20 minutes but your package still has not arrived? Ask the community/staff on Discord, or for payment support, submit a support ticket on our Discord Server. You can also contact us on our Public Contact Email: <span style="color: #ff9f43;">contactmangomc@gmail.com</span></p>
-        
-        <button class="discord-btn">Discord Server</button>
-
-        <div class="info-header" style="margin-top: 25px; color: #ff4757;">REFUND POLICY</div>
-        <p>All payments are final and non-refundable. Attempting a chargeback or opening a PayPal dispute will result in <strong>permanent</strong> and irreversible <strong>banishment</strong> from all of our servers, and other minecraft stores.</p>
-        
-        <p>It could take between 1-20 minutes for your purchase to be credited in-game. If you are still not credited after this time period, please open a support ticket on our forums with proof of purchase. If you are banned from MangoMC for breaking our rules, you will lose access to your purchased goods.</p>
-        
-        <div class="button-row">
-            <button class="red-btn">Terms and Conditions</button>
-            <button class="red-btn">Impressum</button>
-            <button class="red-btn">Privacy Policy</button>
-        </div>
-
-        <div class="giftcard-section">
-            <div class="info-header" style="margin-bottom: 12px; display: flex; align-items: center;">
-                <span style="margin-right: 8px; font-size: 14px;">🎁</span> GIFTCARD BALANCE
+            <h2 class="main-title">FEATURED PACKAGES</h2>
+            <div class="package-row" style="border-color: #4caf50;">
+                <img src="ranks.png" class="package-img">
+                <div class="package-info">
+                    <span class="package-name" style="color: #4caf50;">GOD Rank (+3600 Coins)</span>
+                    <span class="package-price">27.00 USD</span>
+                </div>
             </div>
-            <div class="giftcard-box">
-                <input type="text" placeholder="Card Number" class="gift-input">
-                <button class="check-btn">check</button>
+
+            <div class="info-section">
+                <div class="info-header">WELCOME TO THE OFFICIAL</div>
+                <h2 class="info-title">MANGOMC STORE</h2>
+                <p>MangoMC is a free-to-play Public Minecraft Server. Items can be purchased here to enhance gameplay and grant the player various special perks. <br><strong>To begin, please select a category from the sidebar.</strong></p>
+                
+                <div class="info-header" style="margin-top: 25px;">SUPPORT</div>
+                <p>Need any questions answered before checkout? Waited more than 20 minutes but your package still has not arrived? Ask the community/staff on Discord, or for payment support, submit a support ticket on our Discord Server. You can also contact us on our Public Contact Email: <span style="color: #ff9f43;">contactmangomc@gmail.com</span></p>
+                
+                <button class="discord-btn">Discord Server</button>
+
+                <div class="info-header" style="margin-top: 25px; color: #ff4757;">REFUND POLICY</div>
+                <p>All payments are final and non-refundable. Attempting a chargeback or opening a PayPal dispute will result in <strong>permanent</strong> and irreversible <strong>banishment</strong> from all of our servers.</p>
+                
+                <div class="button-row">
+                    <button class="red-btn">Terms and Conditions</button>
+                    <button class="red-btn">Impressum</button>
+                    <button class="red-btn">Privacy Policy</button>
+                </div>
+
+                <div class="giftcard-section">
+                    <div class="info-header" style="margin-bottom: 12px; display: flex; align-items: center;">
+                        <span style="margin-right: 8px; font-size: 14px;">🎁</span> GIFTCARD BALANCE
+                    </div>
+                    <div class="giftcard-box">
+                        <input type="text" placeholder="Card Number" class="gift-input">
+                        <button class="check-btn">check</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-</main>
-    </div>
-    
-function showLogin() {
-    document.getElementById('login-popup').classList.remove('hidden');
-}
 
-function hideLogin() {
-    document.getElementById('login-popup').classList.add('hidden');
-}
+    <script>
+        function showLogin() {
+            document.getElementById('login-popup').classList.remove('hidden');
+        }
 
-function performLogin() {
-    const user = document.getElementById('mc-username').value;
-    if(user) {
-        document.getElementById('display-name').innerText = user;
-        document.getElementById('user-head').src = `https://minotar.net/helm/${user}/32.png`;
-        
-        // Switch views
-        document.getElementById('cart-logged-out').classList.add('hidden');
-        document.getElementById('cart-logged-in').classList.remove('hidden');
-        hideLogin();
-    }
-}
+        function hideLogin() {
+            document.getElementById('login-popup').classList.add('hidden');
+        }
 
-function toggleCartMenu() {
-    document.getElementById('cart-menu').classList.toggle('hidden');
-}
+        function performLogin() {
+            const user = document.getElementById('mc-username').value;
+            if(user) {
+                document.getElementById('display-name').innerText = user + "'s Cart";
+                document.getElementById('popup-name').innerText = user + "'s Cart";
+                document.getElementById('user-head').src = `https://minotar.net/helm/${user}/32.png`;
+                document.getElementById('popup-head').src = `https://minotar.net/helm/${user}/32.png`;
+                
+                document.getElementById('cart-logged-out').classList.add('hidden');
+                document.getElementById('cart-logged-in').classList.remove('hidden');
+                hideLogin();
+            }
+        }
 
-function performLogout() {
-    document.getElementById('cart-logged-out').classList.remove('hidden');
-    document.getElementById('cart-logged-in').classList.add('hidden');
-    document.getElementById('cart-menu').classList.add('hidden');
-}
+        function toggleCartMenu() {
+            document.getElementById('cart-menu').classList.toggle('hidden');
+        }
 
+        function performLogout() {
+            document.getElementById('cart-logged-out').classList.remove('hidden');
+            document.getElementById('cart-logged-in').classList.add('hidden');
+            document.getElementById('cart-menu').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
