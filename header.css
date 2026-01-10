@@ -1,1 +1,37 @@
+/* header.css */
+
+/* 1. The Banner Area */
+.top-section {
+    background-image: url('background.png');
+    background-size: cover;       /* Ensures image covers the whole area */
+    background-position: center;  /* Centers the background image */
+    padding: 60px 0;             /* Vertical space inside the header */
+    text-align: center;           /* Centers the logo and text */
+    border-bottom: 3px solid #25252b; /* A dark separator line */
+    width: 100%;
+    min-height: 300px;           /* Minimum height of the banner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. The Logo */
+.logo {
+    max-width: 300px;            /* Prevents logo from being too huge */
+    height: auto;                /* Maintains aspect ratio */
+    margin-top: 20px;
+    /* Optional: filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5)); */
+}
+
+/* 3. The Cart Bar (Optional placeholder for the top) */
+.top-section::before {
+    content: "EMPTY CART";
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-right: 50px;
+    color: #777;
+    font-size: 11px;
+    font-weight: bold;
+}
 
