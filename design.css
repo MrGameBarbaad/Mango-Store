@@ -91,13 +91,6 @@ body {
     text-transform: uppercase;
 }
 
-.info-title {
-    font-size: 18px;
-    color: #ffffff;
-    margin: 5px 0 15px 0;
-    font-weight: 700;
-}
-
 /* Discord Button (Gold/Orange) */
 .discord-btn {
     background-color: #f39c12;
@@ -127,32 +120,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* The 3 Red Buttons - Exact Size */
-.button-row {
-    display: flex;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.red-btn {
-    flex: 1;
-    background-color: #ff4757;
-    color: white;
-    border: none;
-    padding: 8px 0;
-    font-size: 10px;
-    font-weight: 700;
-    border-radius: 3px;
-    text-transform: none;
-}
-
-/* Giftcard Section - The Inset Look */
-.giftcard-section {
-    margin-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 20px;
-}
-
 .giftcard-container {
     display: flex;
     background-color: #16161a; /* Darker than the box */
@@ -162,23 +129,73 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Update these specific sections in your design.css */
+
+.info-title {
+    font-size: 18px;
+    color: #ff9f43; /* Matches the FireMC header color exactly */
+    margin: 5px 0 15px 0;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Red Buttons - Fixed size and flatter red */
+.button-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.red-btn {
+    flex: 1;
+    background-color: #ff4757; /* The exact FireMC red */
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: none; /* Keeps it from being all caps if not wanted */
+}
+
+/* Giftcard Area - The "Inset" Dark Box */
+.giftcard-section {
+    margin-top: 35px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 20px;
+}
+
+.giftcard-box {
+    display: flex;
+    background-color: #16161a; /* Very dark background for the input */
+    border-radius: 4px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .gift-input {
     background: transparent;
     border: none;
-    color: white;
-    padding: 8px 12px;
+    color: #fff;
+    padding: 10px 15px;
     flex: 1;
-    font-size: 12px;
+    font-size: 13px;
     outline: none;
 }
 
+.gift-input::placeholder {
+    color: #444; /* Dimmer placeholder like the original */
+}
+
 .check-btn {
-    background-color: #2ecc71;
+    background-color: #2ecc71; /* The vibrant green */
     color: white;
     border: none;
-    padding: 0 15px;
-    border-radius: 3px;
+    padding: 0 18px;
+    border-radius: 4px;
     font-size: 11px;
     font-weight: 700;
     cursor: pointer;
+    text-transform: lowercase; /* Matches 'check' in screenshot */
 }
