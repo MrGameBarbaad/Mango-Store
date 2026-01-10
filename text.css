@@ -13,15 +13,15 @@
 /* text.css */
 
 .cat-icon {
-    width: 40px;         /* This is the sweet spot for these icons */
-    height: 40px;
-    min-width: 40px;     /* Prevents them from shrinking */
+    width: 40px !important;         /* This is the sweet spot for these icons */
+    height: 40px !important;
+    min-width: 40px !important;     /* Prevents them from shrinking */
     margin-right: 15px;
     object-fit: contain;
 }
 
 .nav-item {
-    display: flex;
+    display: flex !important;
     align-items: center; /* Keeps text centered with the icon */
     padding: 10px 15px;
     margin-bottom: 5px;
