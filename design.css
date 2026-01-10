@@ -1,5 +1,8 @@
 body {
     background-color: #1a1a1d;
+    color: white; /* Ensures text is visible */
+    margin: 0;
+    padding: 0;
 }
 
 .sidebar {
@@ -14,7 +17,9 @@ body {
     border-radius: 4px;
     padding: 25px;
     border: 1px solid #333;
-/* design.css */
+} /* Fixed: Added missing bracket here */
+
+/* --- Featured Packages Section --- */
 
 .main-title {
     color: #ff9f43;
@@ -22,17 +27,23 @@ body {
     font-size: 16px;
     letter-spacing: 1px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .package-row {
     background-color: #212126;
     border: 1px solid rgba(255,255,255,0.1);
-    border-left: 5px solid; /* This creates the colored stripe on the left */
+    border-left: 5px solid; /* Creates the colored stripe */
     display: flex;
     align-items: center;
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+.package-row:hover {
+    background-color: #2a2a30;
 }
 
 .package-img {
@@ -59,7 +70,8 @@ body {
     margin-top: 4px;
 }
 
-/* Info Section Styling */
+/* --- Info Section Styling (The Welcome Area) --- */
+
 .info-section {
     background-color: #212126;
     margin-top: 30px;
@@ -72,11 +84,13 @@ body {
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .info-title {
     font-size: 22px;
     margin: 5px 0 15px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .info-section p {
@@ -94,4 +108,9 @@ body {
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    transition: 0.3s;
+}
+
+.discord-btn:hover {
+    background-color: #e67e22;
 }
