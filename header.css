@@ -1,55 +1,50 @@
 /* header.css */
 
-/* 1. Fix for the space on top and sides */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* 2. The Banner Area */
+/* 1. The Banner Area */
 .top-section {
     background-image: url('background.png');
     background-size: cover;
     background-position: center;
-    padding: 80px 0;             /* Increased padding for a taller banner */
+    padding: 80px 0;
     text-align: center;
     border-bottom: 3px solid #25252b;
     width: 100%;
-    min-height: 400px;           /* Increased height */
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;     /* Centers logo vertically */
 }
 
-/* 3. The Logo with Pulse Animation */
+/* 2. The Logo with Pulse Animation */
 .logo {
-    max-width: 550px;            /* Increased size as requested */
+    max-width: 550px;
+    width: 90%;
     height: auto;
     margin-top: 20px;
-    animation: pulse 2s infinite ease-in-out; /* The pulse trigger */
+    /* This starts the animation */
+    animation: pulse 3s infinite ease-in-out;
 }
 
-/* 4. The Pulse Animation Logic */
+/* 3. The Pulse Animation Logic */
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Logo gets 5% bigger */
+        transform: scale(1.05); /* Grows slightly */
     }
     100% {
         transform: scale(1);
     }
 }
 
-/* 5. The Cart Bar Fix */
+/* 4. The Cart Bar */
 .top-section::before {
     content: "EMPTY CART";
-    position: absolute;          /* Keeps it at the very top */
-    top: 15px;
-    right: 50px;
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-right: 50px;
     color: #777;
     font-size: 11px;
     font-weight: bold;
