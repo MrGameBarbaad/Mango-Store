@@ -15,7 +15,13 @@ body {
     gap: 20px;
 }
 
+/* structure.css */
+
 .sidebar {
+    width: 280px;        /* Fixed width so icons have room */
+    background-color: #212126;
+    padding: 20px 15px;
+    border-radius: 6px;
     align-self: start;
 }
 
