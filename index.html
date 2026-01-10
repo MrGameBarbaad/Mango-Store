@@ -13,26 +13,45 @@
 
     <header class="top-section">
         <div class="cart-wrapper">
-            <div id="cart-logged-out" class="cart-node" onclick="showLogin()">
-                <div class="cart-node-text">
-                    <span class="node-main">Guest</span>
-                    <span class="node-sub">CLICK TO LOGIN</span>
-                </div>
-                <div class="cart-node-img">
-                    <img src="https://minotar.net/helm/MHF_Question/32.png">
-                </div>
-            </div>
-
-            <div id="cart-logged-in" class="cart-node hidden" onclick="toggleCartMenu()">
-                <div class="cart-node-text">
-                    <span class="node-main" id="display-name">Username</span>
-                    <span class="node-sub">EMPTY CART</span>
-                </div>
-                <div class="cart-node-img">
-                    <img src="https://minotar.net/helm/Steve/32.png" id="user-head">
-                </div>
-            </div>
+    <div id="cart-logged-out" class="cart-node" onclick="showLogin()">
+        <div class="cart-node-text">
+            <span class="node-main">Guest</span>
+            <span class="node-sub">CLICK TO LOGIN</span>
         </div>
+        <div class="cart-node-img">
+            <img src="https://minotar.net/helm/MHF_Question/32.png">
+        </div>
+    </div>
+
+    <div id="cart-logged-in" class="cart-node hidden" onclick="toggleCartMenu()">
+        <div class="cart-node-text">
+            <span class="node-main" id="display-name">Username</span>
+            <span class="node-sub">EMPTY CART</span>
+        </div>
+        <div class="cart-node-img">
+            <img src="https://minotar.net/helm/Steve/32.png" id="user-head">
+        </div>
+    </div>
+</div>
+
+<div id="cart-menu" class="modal-overlay hidden">
+    <div class="cart-card">
+        <div class="popup-header">
+            <img src="" id="popup-head" class="mini-head">
+            <div class="popup-user-info">
+                <span id="popup-name">Player</span>
+                <div class="popup-meta">
+                    <span class="currency">Currency: <b>Dollars / Coins</b></span>
+                </div>
+            </div>
+            <span class="close-popup" onclick="toggleCartMenu()">×</span>
+        </div>
+        <div class="popup-content">
+            <h3 class="empty-title">EMPTY CART</h3>
+            <p>Keep adding items to cart and check back here to complete your purchase!</p>
+        </div>
+    </div>
+</div>
 
         <div class="logo-container">
             <img src="logo.png" class="logo">
