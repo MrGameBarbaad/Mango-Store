@@ -13,26 +13,29 @@
 /* text.css */
 
 .cat-icon {
-    width: 48px;        /* Increased from 32px */
-    height: 48px;       /* Increased from 32px */
-    margin-right: 15px; /* Space between image and text */
+    width: 40px;         /* This is the sweet spot for these icons */
+    height: 40px;
+    min-width: 40px;     /* Prevents them from shrinking */
+    margin-right: 15px;
     object-fit: contain;
-    /* This ensures images don't look blurry if they are high quality */
-    image-rendering: -webkit-optimize-contrast; 
 }
 
 .nav-item {
     display: flex;
-    align-items: center;
-    padding: 15px 20px; /* Added more padding for the bigger icons */
-    margin-bottom: 8px;
-    color: #d1d1d1; 
+    align-items: center; /* Keeps text centered with the icon */
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    color: #cbd5e0;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 16px;    /* Slightly bigger text to match big icons */
+    font-weight: 700;
+    font-size: 14px;
     cursor: pointer;
-    transition: all 0.2s ease;
     border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02); /* Very subtle background */
+}
+
+.nav-item span {
+    white-space: nowrap; /* Keeps the name on one line */
 }
 
 .nav-item:hover {
