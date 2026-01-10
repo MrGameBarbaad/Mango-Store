@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1100">
     <title>MangoMC Store</title>
-    <link rel="stylesheet" href="header.css?v=201">
-    <link rel="stylesheet" href="structure.css?v=201">
-    <link rel="stylesheet" href="design.css?v=201">
-    <link rel="stylesheet" href="text.css?v=201">
+    <link rel="stylesheet" href="header.css?v=202">
+    <link rel="stylesheet" href="structure.css?v=202">
+    <link rel="stylesheet" href="design.css?v=202">
+    <link rel="stylesheet" href="text.css?v=202">
 </head>
 <body>
 
@@ -32,24 +32,6 @@
                     <img src="https://minotar.net/helm/Steve/32.png" id="user-head">
                 </div>
             </div>
-
-            <div id="cart-menu" class="cart-popup hidden">
-                <div class="popup-header">
-                    <img src="" id="popup-head" class="mini-head">
-                    <div class="popup-user-info">
-                        <span id="popup-name">Player</span>
-                        <div class="popup-meta">
-                            <span class="logout-btn" onclick="performLogout()">Logout</span>
-                            <span class="currency">Currency: <b>USD</b></span>
-                        </div>
-                    </div>
-                    <span class="close-popup" onclick="toggleCartMenu()">×</span>
-                </div>
-                <div class="popup-content">
-                    <h3>EMPTY CART</h3>
-                    <p>Keep adding items to cart and check back here to complete your purchase!</p>
-                </div>
-            </div>
         </div>
 
         <div class="logo-container">
@@ -57,19 +39,43 @@
         </div>
     </header>
 
-    <div id="login-popup" class="login-overlay hidden">
+    <div id="login-popup" class="modal-overlay hidden">
         <div class="login-card">
             <h2>Please enter your username to continue</h2>
             <p>Usernames can't contain spaces, they can have any letter and number, and they are Case Sensitive.</p>
             
             <div class="login-input-row">
-                <img src="https://minotar.net/helm/MHF_Question/32.png" class="input-avatar">
-                <input type="text" id="mc-username" placeholder=" ">
+                <img src="https://minotar.net/helm/MHF_Question/32.png" id="live-head" class="input-avatar">
+                <input type="text" id="mc-username" placeholder="Minecraft Username" oninput="updateLiveHead(this.value)">
             </div>
 
             <button class="btn-continue" onclick="performLogin()">CONTINUE</button>
-            <div class="bedrock-check">
-                Bedrock user? <span class="tag-no">No</span>
+            
+            <div class="bedrock-toggle-container">
+                <span>Bedrock user?</span>
+                <div class="toggle-switch" onclick="toggleBedrock()">
+                    <span id="bedrock-status">No</span>
+                    <div id="toggle-slider" class="slider-red"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-menu" class="modal-overlay hidden">
+        <div class="cart-card">
+            <div class="popup-header">
+                <img src="" id="popup-head" class="mini-head">
+                <div class="popup-user-info">
+                    <span id="popup-name">Player</span>
+                    <div class="popup-meta">
+                        <span class="currency">Currency: <b>USD/Coins</b></span>
+                    </div>
+                </div>
+                <span class="close-popup" onclick="toggleCartMenu()">×</span>
+            </div>
+            <div class="popup-content">
+                <h3 class="empty-title">EMPTY CART</h3>
+                <p>Keep adding items to cart and check back here to complete your purchase!</p>
             </div>
         </div>
     </div>
@@ -77,13 +83,10 @@
     <div class="wrapper">
         <aside class="sidebar">
              <div class="sidebar-header">SELECT A CATEGORY</div>
-                 <div class="nav-item">
-                     <img src="coins.png" class="cat-icon">
-                     <span>Coins</span>
-                 </div>
-                 <div class="nav-item"><img src="ranks.png" class="cat-icon"><span>Ranks</span></div>
-                 <div class="nav-item"><img src="kits.png" class="cat-icon"><span>Kits</span></div>
-                 <div class="nav-item"><img src="dollars.png" class="cat-icon"><span>Dollars</span></div>
+             <div class="nav-item"><img src="coins.png" class="cat-icon"><span>Coins</span></div>
+             <div class="nav-item"><img src="ranks.png" class="cat-icon"><span>Ranks</span></div>
+             <div class="nav-item"><img src="kits.png" class="cat-icon"><span>Kits</span></div>
+             <div class="nav-item"><img src="dollars.png" class="cat-icon"><span>Dollars</span></div>
         </aside>
 
         <main class="main-content">
@@ -129,6 +132,30 @@
     </div>
 
     <script>
+        let isBedrock = false;
+
+        function updateLiveHead(val) {
+            const head = document.getElementById('live-head');
+            if(val.trim() === "") {
+                head.src = "https://minotar.net/helm/MHF_Question/32.png";
+            } else {
+                head.src = `https://minotar.net/helm/${val}/32.png`;
+            }
+        }
+
+        function toggleBedrock() {
+            isBedrock = !isBedrock;
+            const status = document.getElementById('bedrock-status');
+            const slider = document.getElementById('toggle-slider');
+            if(isBedrock) {
+                status.innerText = "Yes";
+                slider.className = "slider-green";
+            } else {
+                status.innerText = "No";
+                slider.className = "slider-red";
+            }
+        }
+
         function showLogin() {
             document.getElementById('login-popup').classList.remove('hidden');
         }
@@ -154,12 +181,6 @@
 
         function toggleCartMenu() {
             document.getElementById('cart-menu').classList.toggle('hidden');
-        }
-
-        function performLogout() {
-            document.getElementById('cart-logged-out').classList.remove('hidden');
-            document.getElementById('cart-logged-in').classList.add('hidden');
-            document.getElementById('cart-menu').classList.add('hidden');
         }
     </script>
 </body>
