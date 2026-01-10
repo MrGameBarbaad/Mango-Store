@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@600&display=swap');
 
 .sidebar-header {
-    color: #ff9f43; /* FireMC Orange/Gold */
+    color: #ff9f43;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     font-weight: 800;
@@ -10,19 +10,19 @@
     margin-bottom: 20px;
     padding-left: 15px;
     text-transform: uppercase;
-/* text.css */
+} /* <--- THIS WAS MISSING! It's fixed now */
 
 .cat-icon {
-    width: 40px !important;         /* This is the sweet spot for these icons */
+    width: 40px !important;
     height: 40px !important;
-    min-width: 40px !important;     /* Prevents them from shrinking */
+    min-width: 40px !important;
     margin-right: 15px !important;
-    object-fit: contain;
+    object-fit: contain !important;
 }
-u
+
 .nav-item {
     display: flex !important;
-    align-items: center !important; /* Keeps text centered with the icon */
+    align-items: center !important;
     padding: 10px 15px !important;
     margin-bottom: 5px !important;
     color: #cbd5e0 !important;
@@ -31,15 +31,15 @@ u
     font-size: 14px !important;
     cursor: pointer !important;
     border-radius: 4px !important;
-    background: rgba(255, 255, 255, 0.02) !important; /* Very subtle background */
+    background: rgba(255, 255, 255, 0.02) !important;
 }
 
 .nav-item span {
-    white-space: nowrap; /* Keeps the name on one line */
+    white-space: nowrap;
 }
 
 .nav-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-    transform: translateX(5px); /* Slight slide effect like pro stores */
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+    transform: translateX(5px);
 }
