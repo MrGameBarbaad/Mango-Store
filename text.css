@@ -16,22 +16,22 @@
     width: 40px !important;         /* This is the sweet spot for these icons */
     height: 40px !important;
     min-width: 40px !important;     /* Prevents them from shrinking */
-    margin-right: 15px;
+    margin-right: 15px !important;
     object-fit: contain;
 }
-
+u
 .nav-item {
     display: flex !important;
-    align-items: center; /* Keeps text centered with the icon */
-    padding: 10px 15px;
-    margin-bottom: 5px;
-    color: #cbd5e0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.02); /* Very subtle background */
+    align-items: center !important; /* Keeps text centered with the icon */
+    padding: 10px 15px !important;
+    margin-bottom: 5px !important;
+    color: #cbd5e0 !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    border-radius: 4px !important;
+    background: rgba(255, 255, 255, 0.02) !important; /* Very subtle background */
 }
 
 .nav-item span {
