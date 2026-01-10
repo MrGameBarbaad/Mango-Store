@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centers the logo vertically in the banner */
 }
 
 /* 2. The Logo with Pulse Animation */
@@ -20,8 +21,6 @@
     max-width: 550px;
     width: 90%;
     height: auto;
-    margin-top: 20px;
-    /* This starts the animation */
     animation: pulse 3s infinite ease-in-out;
 }
 
@@ -31,21 +30,9 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Grows slightly */
+        transform: scale(1.03); /* Subtle grow */
     }
     100% {
         transform: scale(1);
     }
-}
-
-/* 4. The Cart Bar */
-.top-section::before {
-    content: "EMPTY CART";
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-right: 50px;
-    color: #777;
-    font-size: 11px;
-    font-weight: bold;
 }
