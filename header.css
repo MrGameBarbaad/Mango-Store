@@ -18,7 +18,7 @@
 
 /* 2. The Logo with Pulse Animation */
 .logo {
-    max-width: 550px;
+    max-width: 500px;
     width: 90%;
     height: auto;
     animation: pulse 3s infinite ease-in-out;
