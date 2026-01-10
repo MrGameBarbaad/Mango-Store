@@ -13,41 +13,40 @@
 
     <header class="top-section">
         <div class="cart-wrapper">
-            <div id="cart-logged-out" class="cart-guest" onclick="showLogin()">
-                <div class="guest-info">
-                    <span class="guest-title">Guest</span>
-                    <span class="guest-sub">CLICK TO LOGIN</span>
+            <div id="cart-logged-out" class="cart-node" onclick="showLogin()">
+                <div class="cart-node-text">
+                    <span class="node-main">Guest</span>
+                    <span class="node-sub">CLICK TO LOGIN</span>
                 </div>
-                <div class="guest-avatar">
+                <div class="cart-node-img">
                     <img src="https://minotar.net/helm/MHF_Question/32.png">
                 </div>
             </div>
 
-            <div id="cart-logged-in" class="cart-user hidden" onclick="toggleCartMenu()">
-                <div class="user-info">
-                    <span class="user-title" id="display-name">Username</span>
-                    <span class="user-sub">EMPTY CART</span>
+            <div id="cart-logged-in" class="cart-node hidden" onclick="toggleCartMenu()">
+                <div class="cart-node-text">
+                    <span class="node-main" id="display-name">Username</span>
+                    <span class="node-sub">EMPTY CART</span>
                 </div>
-                <div class="user-avatar">
+                <div class="cart-node-img">
                     <img src="https://minotar.net/helm/Steve/32.png" id="user-head">
-                    <span class="cart-badge">0</span>
                 </div>
             </div>
 
             <div id="cart-menu" class="cart-popup hidden">
                 <div class="popup-header">
                     <img src="" id="popup-head" class="mini-head">
-                    <div class="popup-user-details">
+                    <div class="popup-user-info">
                         <span id="popup-name">Player</span>
-                        <div class="popup-actions">
-                            <span class="logout-link" onclick="performLogout()">Logout</span>
-                            <span class="currency-tag">Currency: <b>USD</b></span>
+                        <div class="popup-meta">
+                            <span class="logout-btn" onclick="performLogout()">Logout</span>
+                            <span class="currency">Currency: <b>USD</b></span>
                         </div>
                     </div>
-                    <span class="close-x" onclick="toggleCartMenu()">×</span>
+                    <span class="close-popup" onclick="toggleCartMenu()">×</span>
                 </div>
-                <div class="popup-body">
-                    <h4 class="empty-title">EMPTY CART</h4>
+                <div class="popup-content">
+                    <h3>EMPTY CART</h3>
                     <p>Keep adding items to cart and check back here to complete your purchase!</p>
                 </div>
             </div>
@@ -58,19 +57,19 @@
         </div>
     </header>
 
-    <div id="login-popup" class="login-modal hidden">
-        <div class="login-box">
-            <h3>Please enter your username to continue</h3>
+    <div id="login-popup" class="login-overlay hidden">
+        <div class="login-card">
+            <h2>Please enter your username to continue</h2>
             <p>Usernames can't contain spaces, they can have any letter and number, and they are Case Sensitive.</p>
             
-            <div class="input-container">
-                <img src="https://minotar.net/helm/MHF_Question/32.png" class="input-head">
-                <input type="text" id="mc-username" placeholder="Minecraft Username">
+            <div class="login-input-row">
+                <img src="https://minotar.net/helm/MHF_Question/32.png" class="input-avatar">
+                <input type="text" id="mc-username" placeholder=" ">
             </div>
 
-            <button class="continue-btn" onclick="performLogin()">CONTINUE</button>
-            <div class="bedrock-toggle">
-                Bedrock user? <span class="no-tag">No</span>
+            <button class="btn-continue" onclick="performLogin()">CONTINUE</button>
+            <div class="bedrock-check">
+                Bedrock user? <span class="tag-no">No</span>
             </div>
         </div>
     </div>
@@ -82,18 +81,9 @@
                      <img src="coins.png" class="cat-icon">
                      <span>Coins</span>
                  </div>
-                 <div class="nav-item">
-                     <img src="ranks.png" class="cat-icon">
-                     <span>Ranks</span>
-                 </div>
-                 <div class="nav-item">
-                     <img src="kits.png" class="cat-icon">
-                     <span>Kits</span>
-                 </div>
-                <div class="nav-item">
-                    <img src="dollars.png" class="cat-icon">
-                    <span>Dollars</span>
-                </div>
+                 <div class="nav-item"><img src="ranks.png" class="cat-icon"><span>Ranks</span></div>
+                 <div class="nav-item"><img src="kits.png" class="cat-icon"><span>Kits</span></div>
+                 <div class="nav-item"><img src="dollars.png" class="cat-icon"><span>Dollars</span></div>
         </aside>
 
         <main class="main-content">
@@ -149,11 +139,12 @@
 
         function performLogin() {
             const user = document.getElementById('mc-username').value;
-            if(user) {
+            if(user.trim() !== "") {
                 document.getElementById('display-name').innerText = user + "'s Cart";
                 document.getElementById('popup-name').innerText = user + "'s Cart";
-                document.getElementById('user-head').src = `https://minotar.net/helm/${user}/32.png`;
-                document.getElementById('popup-head').src = `https://minotar.net/helm/${user}/32.png`;
+                const headUrl = `https://minotar.net/helm/${user}/32.png`;
+                document.getElementById('user-head').src = headUrl;
+                document.getElementById('popup-head').src = headUrl;
                 
                 document.getElementById('cart-logged-out').classList.add('hidden');
                 document.getElementById('cart-logged-in').classList.remove('hidden');
