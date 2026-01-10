@@ -1,11 +1,10 @@
-/* text.css */
-
 .sidebar-title {
-    color: #f39c12; /* Gold color */
+    color: #f39c12;
     font-size: 12px;
     letter-spacing: 1px;
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-family: sans-serif;
 }
 
 .nav-item {
@@ -13,19 +12,17 @@
     padding: 10px 0;
     border-bottom: 1px solid #333;
     font-size: 14px;
-    cursor: pointer;
-}
-
-.nav-item:hover {
-    color: #f39c12;
+    font-family: sans-serif;
 }
 
 h3 {
     margin-top: 0;
     color: white;
+    font-family: sans-serif;
 }
 
 p {
     color: #bdbdbd;
     line-height: 1.6;
+    font-family: sans-serif;
 }
