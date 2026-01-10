@@ -8,66 +8,49 @@
 </head>
 <body>
 
-    <header class="header-section" style="background-image: url('background.png');">
-        <div class="top-nav">
-            <div class="cart-status">EMPTY CART</div>
-        </div>
-        
-        <img src="logo.png" alt="FireMC Logo" class="main-logo">
-
-        <div class="server-status-bars">
-            <div class="status-box">
-                <img src="ipcopy.png" alt="IP">
-                <div>
-                    <span class="title">PLAY.FIREMC.FUN</span>
-                    <span class="subtitle">CLICK TO COPY</span>
-                </div>
-            </div>
-            <div class="status-box">
-                <div>
-                    <span class="title">DISCORD SERVER</span>
-                    <span class="subtitle">CLICK TO JOIN</span>
-                </div>
-                <img src="discord.png" alt="Discord">
-            </div>
+    <header class="hero" style="background-image: url('background.png');">
+        <div class="cart-nav">EMPTY CART</div>
+        <img src="logo.png" class="logo-img" alt="FireMC">
+        <div class="server-bars">
+            <div class="bar-box"><img src="ipcopy.png" width="20"> PLAY.FIREMC.FUN <span>CLICK TO COPY</span></div>
+            <div class="bar-box">DISCORD SERVER <span>CLICK TO JOIN</span> <img src="discord.png" width="20"></div>
         </div>
     </header>
 
-    <div class="main-layout">
-        <aside class="sidebar">
-            <h3 class="gold-text">SELECT A CATEGORY</h3>
-            <div class="category"><img src="coins.png" width="20"> Coins [LifeSteal]</div>
-            <div class="category"><img src="ranks.png" width="20"> Lifesteal Ranks</div>
-            <div class="category"><img src="coins.png" width="20"> Coins [Classic]</div>
-            <div class="category"><img src="ranks.png" width="20"> Classic Ranks</div>
-        </aside>
+    <div class="main-wrapper">
+        <nav class="sidebar">
+            <h3 class="gold-label">SELECT A CATEGORY</h3>
+            <div class="cat-link"><img src="coins.png" width="18"> Coins [LifeSteal]</div>
+            <div class="cat-link"><img src="ranks.png" width="18"> Lifesteal Ranks</div>
+            <div class="cat-link"><img src="coins.png" width="18"> Coins [Classic]</div>
+            <div class="cat-link"><img src="ranks.png" width="18"> Classic Ranks</div>
+        </nav>
 
-        <main class="content-area">
-            <h3 class="gold-text">FEATURED PACKAGES</h3>
+        <section class="main-content">
+            <h3 class="gold-label">FEATURED PACKAGES</h3>
             
-            <div class="package-card green-border">
-                <div class="package-details">
+            <div class="package-item green-glow">
+                <div class="pkg-info">
                     <h4>GOD Rank (+3600 Coins)</h4>
-                    <p>27.00 USD</p>
+                    <span class="price">27.00 USD</span>
                 </div>
             </div>
 
-            <div class="welcome-section">
-                <h3 class="gold-text">WELCOME TO THE OFFICIAL FIREMC STORE</h3>
-                <p>FireMC is a free-to-play Public Minecraft Server. Items can be purchased here to enhance gameplay...</p>
-                <button class="orange-btn">Discord Server</button>
+            <div class="text-block">
+                <h3 class="gold-label">WELCOME TO THE OFFICIAL FIREMC STORE</h3>
+                <p>FireMC is a free-to-play Public Minecraft Server. Items can be purchased here to enhance gameplay and grant the player various special perks.</p>
+                <button class="btn-orange">Discord Server</button>
+
+                <h3 class="red-label">REFUND POLICY</h3>
+                <p class="small-text">All payments are final and non-refundable. Attempting a chargeback will result in a permanent ban.</p>
                 
-                <h3 class="red-text">REFUND POLICY</h3>
-                <p class="policy-text">All payments are final and non-refundable. Attempting a chargeback will result in a permanent ban.</p>
-                
-                <div class="footer-buttons">
-                    <button class="red-btn">Terms and Conditions</button>
-                    <button class="red-btn">Impressum</button>
-                    <button class="red-btn">Privacy Policy</button>
+                <div class="footer-btns">
+                    <button class="btn-red">Terms and Conditions</button>
+                    <button class="btn-red">Impressum</button>
+                    <button class="btn-red">Privacy Policy</button>
                 </div>
             </div>
-        </main>
+        </section>
     </div>
-
 </body>
 </html>
