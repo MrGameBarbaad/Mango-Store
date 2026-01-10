@@ -312,12 +312,6 @@ body {
 .empty-title { color: #ff4757; margin: 40px 0 10px 0; font-size: 14px;}
 .close-popup { position: absolute; top: 15px; right: 15px; color: #666; cursor: pointer; font-size: 20px;}
 
-
-
-
-
-
-
 /* 1. Precise Cart Positioning */
 .cart-wrapper { 
     position: absolute; 
