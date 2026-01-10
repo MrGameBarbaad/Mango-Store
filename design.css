@@ -312,14 +312,6 @@ body {
 .empty-title { color: #ff4757; margin: 40px 0 10px 0; font-size: 14px;}
 .close-popup { position: absolute; top: 15px; right: 15px; color: #666; cursor: pointer; font-size: 20px;}
 
-/* 1. Precise Cart Positioning */
-.cart-wrapper { 
-    position: absolute; 
-    top: 20px; 
-    right: 20px; /* Aligns to the far right of the header container */
-    z-index: 100; 
-}
-
 /* 2. Fixed Bedrock Toggle Animation */
 .toggle-switch {
     width: 65px;
@@ -375,4 +367,37 @@ body {
     align-items: center; /* Vertical Center */
     justify-content: center; /* Horizontal Center */
     z-index: 1000;
+}
+
+/* Push cart to the absolute edge */
+.cart-wrapper {
+    position: absolute;
+    top: 15px;
+    right: 0px !important; /* Changed from 15px to 0px to hit the corner */
+    z-index: 100;
+}
+
+/* Currency Selection Styling */
+.popup-meta {
+    color: #666;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.currency-opt {
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #999;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.currency-opt.active {
+    color: #ff9f43; /* Orange glow for selected */
+    background: rgba(255, 159, 67, 0.1);
+}
+
+.currency-opt:hover {
+    color: #fff;
 }
