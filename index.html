@@ -3,50 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FireMC Store Clone</title>
+    <title>FireMC Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <img src="YOUR_LOGO_URL_HERE" alt="FireMC Logo" class="logo">
-        <div class="server-info">
-            <div class="info-box">PLAY.FIREMC.FUN <span>CLICK TO COPY</span></div>
-            <div class="info-box">DISCORD SERVER <span>CLICK TO JOIN</span></div>
+
+    <header class="header-section" style="background-image: url('background.png');">
+        <div class="top-nav">
+            <div class="cart-status">EMPTY CART</div>
+        </div>
+        
+        <img src="logo.png" alt="FireMC Logo" class="main-logo">
+
+        <div class="server-status-bars">
+            <div class="status-box">
+                <img src="ipcopy.png" alt="IP">
+                <div>
+                    <span class="title">PLAY.FIREMC.FUN</span>
+                    <span class="subtitle">CLICK TO COPY</span>
+                </div>
+            </div>
+            <div class="status-box">
+                <div>
+                    <span class="title">DISCORD SERVER</span>
+                    <span class="subtitle">CLICK TO JOIN</span>
+                </div>
+                <img src="discord.png" alt="Discord">
+            </div>
         </div>
     </header>
 
-    <div class="main-container">
+    <div class="main-layout">
         <aside class="sidebar">
-            <h3>SELECT A CATEGORY</h3>
-            <ul>
-                <li>Coins [LifeSteal]</li>
-                <li>Lifesteal Ranks</li>
-                <li>Coins [Classic]</li>
-                <li>Classic Ranks</li>
-            </ul>
+            <h3 class="gold-text">SELECT A CATEGORY</h3>
+            <div class="category"><img src="coins.png" width="20"> Coins [LifeSteal]</div>
+            <div class="category"><img src="ranks.png" width="20"> Lifesteal Ranks</div>
+            <div class="category"><img src="coins.png" width="20"> Coins [Classic]</div>
+            <div class="category"><img src="ranks.png" width="20"> Classic Ranks</div>
         </aside>
 
-        <main class="content">
-            <h3>FEATURED PACKAGES</h3>
-            <div class="package-card green">
-                <div class="package-info">
+        <main class="content-area">
+            <h3 class="gold-text">FEATURED PACKAGES</h3>
+            
+            <div class="package-card green-border">
+                <div class="package-details">
                     <h4>GOD Rank (+3600 Coins)</h4>
                     <p>27.00 USD</p>
                 </div>
             </div>
-            <div class="package-card gold">
-                <div class="package-info">
-                    <h4>15600 Coins (LIFESTEAL)</h4>
-                    <p>12.20 USD</p>
+
+            <div class="welcome-section">
+                <h3 class="gold-text">WELCOME TO THE OFFICIAL FIREMC STORE</h3>
+                <p>FireMC is a free-to-play Public Minecraft Server. Items can be purchased here to enhance gameplay...</p>
+                <button class="orange-btn">Discord Server</button>
+                
+                <h3 class="red-text">REFUND POLICY</h3>
+                <p class="policy-text">All payments are final and non-refundable. Attempting a chargeback will result in a permanent ban.</p>
+                
+                <div class="footer-buttons">
+                    <button class="red-btn">Terms and Conditions</button>
+                    <button class="red-btn">Impressum</button>
+                    <button class="red-btn">Privacy Policy</button>
                 </div>
             </div>
-            
-            <section class="welcome-text">
-                <h3>WELCOME TO THE OFFICIAL FIREMC STORE</h3>
-                <p>FireMC is a free-to-play Public Minecraft Server...</p>
-                <button class="discord-btn">Discord Server</button>
-            </section>
         </main>
     </div>
+
 </body>
 </html>
