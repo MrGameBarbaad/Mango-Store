@@ -11,6 +11,36 @@
 </head>
 <body>
 
+    <div class="cart-wrapper">
+    <div id="cart-logged-out" class="cart-button" onclick="showLogin()">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-text">0 items - 0.00 USD</span>
+    </div>
+
+    <div id="cart-logged-in" class="cart-button hidden" onclick="toggleCartMenu()">
+        <img src="https://minotar.net/helm/Steve/32.png" id="user-head" class="user-head">
+        <span class="username" id="display-name">Steve</span>
+        <span class="cart-count">0</span>
+    </div>
+
+    <div id="login-popup" class="modal hidden">
+        <div class="modal-content">
+            <h3>Login to our store</h3>
+            <p>Please enter your Minecraft username to continue.</p>
+            <input type="text" id="mc-username" placeholder="Minecraft Username">
+            <button class="login-submit" onclick="performLogin()">Login</button>
+            <button class="close-link" onclick="hideLogin()">Close</button>
+        </div>
+    </div>
+
+    <div id="cart-menu" class="cart-dropdown hidden">
+        <div class="dropdown-header">Your Basket</div>
+        <div class="empty-msg">Your basket is empty.</div>
+        <button class="checkout-btn">Checkout</button>
+        <button class="logout-btn" onclick="performLogout()">Logout</button>
+    </div>
+</div>
+
     <header class="top-section">
         <div class="logo-container">
             <img src="logo.png" class="logo">
