@@ -1,76 +1,79 @@
+/* General Setup */
 body {
     background-color: #1a1a1d;
-    color: #bdbdbd;
-    font-family: 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
+    padding-bottom: 50px;
 }
 
-.header-section {
+/* Header & Logo Scaling */
+.hero {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 40px 0;
-    position: relative;
+    padding: 60px 20px;
+    border-bottom: 3px solid #25252b;
 }
 
-.main-logo {
+.logo-img {
+    max-width: 300px; /* Limits size so it doesn't take over the screen */
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Layout Columns */
+.main-wrapper {
+    display: flex; /* Makes sidebar and content sit side-by-side */
+    max-width: 1000px;
+    margin: 30px auto;
+    gap: 20px;
+}
+
+/* Sidebar Styling */
+.sidebar {
     width: 280px;
-    margin-bottom: 20px;
+    background: #25252b;
+    border-radius: 4px;
+    padding: 15px;
+    height: fit-content;
 }
 
-.server-status-bars {
-    display: flex;
-    justify-content: center;
-    gap: 150px;
-}
-
-.status-box {
+.cat-link {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-align: left;
-}
-
-.title { display: block; color: #f39c12; font-weight: bold; font-size: 14px; }
-.subtitle { font-size: 10px; color: #fff; }
-
-.main-layout {
-    display: flex;
-    max-width: 1100px;
-    margin: 30px auto;
-    gap: 20px;
-    padding: 0 15px;
-}
-
-.sidebar {
-    width: 260px;
-    background: #25252b;
-    padding: 20px;
-    border-radius: 4px;
-}
-
-.category {
     padding: 12px;
     border-bottom: 1px solid #333;
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    cursor: pointer;
 }
 
-.gold-text { color: #f39c12; font-size: 13px; text-transform: uppercase; }
-.red-text { color: #e74c3c; margin-top: 30px; }
+/* Content Area */
+.main-content {
+    flex: 1; /* Takes up the remaining space */
+}
 
-.package-card {
+.package-item {
     background: #25252b;
-    padding: 15px;
+    padding: 20px;
     border-radius: 6px;
     margin-bottom: 15px;
 }
 
-.green-border { border: 2px solid #2ecc71; }
+.green-glow { border-left: 5px solid #2ecc71; border: 1px solid #2ecc71; }
 
-.orange-btn { background: #e67e22; border: none; padding: 10px 20px; color: white; border-radius: 4px; cursor: pointer; }
+/* Text & Colors */
+.gold-label { color: #f39c12; font-size: 13px; font-weight: bold; }
+.red-label { color: #e74c3c; font-size: 13px; margin-top: 30px; }
 
-.footer-buttons { display: flex; gap: 10px; margin-top: 20px; }
-.red-btn { background: #e74c3c; border: none; padding: 8px 15px; color: white; border-radius: 4px; font-size: 12px; }
+/* Buttons */
+.btn-orange { background: #e67e22; border: none; color: white; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+.btn-red { background: #e74c3c; border: none; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; cursor: pointer; }
+.footer-btns { display: flex; gap: 8px; margin-top: 15px; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-wrapper { flex-direction: column; padding: 10px; }
+    .sidebar { width: auto; }
+}
