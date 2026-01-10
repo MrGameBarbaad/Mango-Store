@@ -130,14 +130,6 @@ body {
     padding-top: 20px;
 }
 
-.giftcard-box {
-    display: flex;
-    background-color: #16161a; /* Very dark background for the input */
-    border-radius: 4px;
-    padding: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
 .gift-input {
     background: transparent;
     border: none;
@@ -150,18 +142,6 @@ body {
 
 .gift-input::placeholder {
     color: #444; /* Dimmer placeholder like the original */
-}
-
-.check-btn {
-    background-color: #2ecc71; /* The vibrant green */
-    color: white;
-    border: none;
-    padding: 0 18px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: lowercase; /* Matches 'check' in screenshot */
 }
 
 .info-title {
@@ -194,4 +174,25 @@ body {
     font-weight: 700;
     border-radius: 4px;
     margin: 10px 0 20px 0;
+}
+
+.giftcard-box {
+    display: flex;
+    background-color: #16161a;
+    border-radius: 4px;
+    padding: 2px; /* Thinner padding around the input */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    max-width: 550px; /* Stops it from stretching too far right */
+}
+
+.check-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 20px; /* Taller button */
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: lowercase;
 }
