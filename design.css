@@ -2,11 +2,11 @@ body {
     background-color: #1a1a1d;
 }
 
-.sidebar, .main-content {
-    background-color: #25252b;
-    border-radius: 4px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.sidebar {
+    background-color: #212126; /* Deep dark grey */
+    padding: 20px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .package-card {
