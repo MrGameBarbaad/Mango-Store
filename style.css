@@ -1,29 +1,42 @@
+/* 1. Basic Setup */
 body {
     background-color: #1a1a1d;
     color: #e0e0e0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
+    padding: 0;
 }
 
-/* Header & Logo Fixes */
-.store-header {
+/* 2. Header & Background Scaling */
+.hero {
+    background-image: url('background.png');
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 40px 10px;
+    padding: 40px 0; /* Shrinks the height of the top area */
     border-bottom: 2px solid #25252b;
 }
 
-.store-logo {
-    max-width: 250px; /* Prevents huge logo from overlapping */
+/* 3. Logo Scaling (THIS IS THE BIG FIX) */
+.logo-img {
+    max-width: 280px; /* Forces the logo to stay small */
     height: auto;
-    margin: 15px 0;
+    margin-bottom: 20px;
 }
 
-.status-container {
+/* 4. Status Bar Layout */
+.server-bars {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 80px; /* Puts space between IP and Discord */
+}
+
+.bar-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-size: 14px;
 }
 
 .status-item { display: flex; align-items: center; gap: 8px; text-align: left; }
