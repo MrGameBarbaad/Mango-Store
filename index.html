@@ -153,13 +153,28 @@
     <script>
         let isBedrock = false;
 
-        function updateLiveHead(val) {
-            const head = document.getElementById('live-head');
-            if(val.trim() === "") {
-                head.src = "https://minotar.net/helm/MHF_Question/32.png";
-            } else {
-                head.src = `https://minotar.net/helm/${val}/32.png`;
-            }
+function toggleBedrock() {
+    isBedrock = !isBedrock;
+    const statusText = document.getElementById('bedrock-status');
+    const slider = document.getElementById('toggle-slider');
+    
+    if (isBedrock) {
+        statusText.innerText = "Yes";
+        slider.className = "slider-green";
+    } else {
+        statusText.innerText = "No";
+        slider.className = "slider-red";
+    }
+}
+
+// Live Skin Update
+function updateLiveHead(val) {
+    const head = document.getElementById('live-head');
+    const cleanName = val.trim();
+    head.src = cleanName === "" 
+        ? "https://minotar.net/helm/MHF_Question/32.png" 
+        : `https://minotar.net/helm/${cleanName}/32.png`;
+}
         }
 
         function toggleBedrock() {
