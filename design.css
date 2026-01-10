@@ -1,35 +1,25 @@
-/* design.css */
-
-/* 1. Global Page Background */
 body {
-    background-color: #1a1a1d; /* Dark grey/black background */
-    margin: 0;
-    padding: 0;
+    background-color: #1a1a1d;
 }
 
-/* 2. Container Boxes (Sidebar and Main Content) */
 .sidebar, .main-content {
-    background-color: #25252b; /* Slightly lighter grey for the boxes */
-    border-radius: 4px;        /* Soft rounded corners */
+    background-color: #25252b;
+    border-radius: 4px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Adds depth */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* 3. Featured Package Box */
-/* This is for the "GOD Rank" or "Featured" style */
 .package-card {
     background-color: #25252b;
-    border: 1px solid #2ecc71; /* Green border */
-    border-left: 5px solid #2ecc71; /* Thicker left edge for emphasis */
+    border: 1px solid #2ecc71;
+    border-left: 5px solid #2ecc71;
     border-radius: 4px;
     padding: 15px;
-    margin-bottom: 20px;
 }
 
-/* 4. Support/Text Box */
 .content-box {
     background-color: #25252b;
     border-radius: 4px;
     padding: 25px;
-    border: 1px solid #333; /* Subtle border for the text area */
+    border: 1px solid #333;
 }
