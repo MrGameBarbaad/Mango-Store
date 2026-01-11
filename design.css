@@ -369,14 +369,6 @@ body {
     z-index: 1000;
 }
 
-/* Push cart to the absolute edge */
-.cart-wrapper {
-    position: absolute;
-    top: 15px;
-    right: 0px !important; /* Changed from 15px to 0px to hit the corner */
-    z-index: 100;
-}
-
 /* Currency Selection Styling */
 .popup-meta {
     color: #666;
@@ -384,20 +376,33 @@ body {
     margin-top: 5px;
 }
 
+.currency-opt:hover {
+    color: #fff;
+}
+
+.top-section {
+    position: relative;
+    padding-right: 0 !important; /* Remove any side padding */
+    margin-right: 0 !important;
+}
+
+.cart-wrapper {
+    position: absolute;
+    top: 20px;
+    right: -20px !important; /* Try negative if 0 is still too far left */
+    z-index: 1000;
+}
+
+/* Currency styles to make selection visible */
 .currency-opt {
     cursor: pointer;
-    padding: 2px 6px;
+    margin-left: 5px;
+    padding: 2px 5px;
     border-radius: 3px;
-    color: #999;
     transition: 0.2s;
-    font-weight: bold;
 }
 
 .currency-opt.active {
-    color: #ff9f43; /* Orange glow for selected */
-    background: rgba(255, 159, 67, 0.1);
-}
-
-.currency-opt:hover {
-    color: #fff;
+    background: #ff9f43;
+    color: #000 !important;
 }
