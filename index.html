@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1100">
     <title>MangoMC Store</title>
-    <link rel="stylesheet" href="header.css?v=203">
-    <link rel="stylesheet" href="structure.css?v=203">
-    <link rel="stylesheet" href="design.css?v=203">
-    <link rel="stylesheet" href="text.css?v=203">
+    <link rel="stylesheet" href="header.css?v=204">
+    <link rel="stylesheet" href="structure.css?v=204">
+    <link rel="stylesheet" href="design.css?v=204">
+    <link rel="stylesheet" href="text.css?v=204">
 </head>
 <body>
 
@@ -77,8 +77,12 @@
                 <span class="close-popup" onclick="toggleCartMenu()">×</span>
             </div>
             <div class="popup-content">
-                <h3 class="empty-title">EMPTY CART</h3>
-                <p>Keep adding items to cart and check back here to complete your purchase!</p>
+                <h3 class="empty-title">YOUR CART</h3>
+                <p id="cart-status-msg">Your cart is currently empty. Add items to proceed!</p>
+                
+                <div class="cart-footer" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                    <button class="checkout-btn" onclick="processCheckout()">CHECKOUT</button>
+                </div>
             </div>
         </div>
     </div>
@@ -93,17 +97,15 @@
         </aside>
 
         <main class="main-content">
-           <h2 class="main-title">FEATURED PACKAGES</h2>
+            <h2 class="main-title">FEATURED PACKAGES</h2>
     
-             <div class="package-row" style="border-color: #4caf50;">
-              <img src="ranks.png" class="package-img">
-             <div class="package-info">
-                 <span class="package-name" style="color: #4caf50;">GOD Rank (+3600 Coins)</span>
-                 <span class="package-price">27.00 USD</span>
-             </div>
-                 <button class="buy-btn" onclick="addToCart('GOD Rank')">BUY</button>
-             </div>
-        </main>
+            <div class="package-row" style="border-color: #4caf50;">
+                <img src="ranks.png" class="package-img">
+                <div class="package-info">
+                    <span class="package-name" style="color: #4caf50;">GOD Rank (+3600 Coins)</span>
+                    <span class="package-price">27.00 USD</span>
+                </div>
+                <button class="buy-btn" onclick="addToCart('GOD Rank')">BUY</button>
             </div>
 
             <div class="info-section">
@@ -141,7 +143,6 @@
     <script>
         let isBedrock = false;
 
-        // LOAD SAVED LOGIN
         window.onload = function() {
             const savedUser = localStorage.getItem('mc_username');
             if (savedUser) {
@@ -169,11 +170,6 @@
             }
         }
 
-        function performLogout() {
-            localStorage.removeItem('mc_username');
-            location.reload();
-        }
-
         function toggleBedrock() {
             isBedrock = !isBedrock;
             const statusText = document.getElementById('bedrock-status');
@@ -197,14 +193,25 @@
         function hideLogin() { document.getElementById('login-popup').classList.add('hidden'); }
         function toggleCartMenu() { document.getElementById('cart-menu').classList.toggle('hidden'); }
 
-        function setCurrency(element, type) {
+        function setCurrency(element) {
             document.querySelectorAll('.currency-opt').forEach(opt => opt.classList.remove('active'));
             element.classList.add('active');
         }
 
         function addToCart(itemName) {
+            document.getElementById('cart-status-msg').innerText = "1x " + itemName + " - Added to Cart";
             alert(itemName + " has been added to your cart!");
-            toggleCartMenu(); // Opens the cart so they can see it
+            toggleCartMenu();
+        }
+
+        function processCheckout() {
+            const user = localStorage.getItem('mc_username');
+            if (!user) {
+                alert("Please login first!");
+                showLogin();
+                return;
+            }
+            alert("Redirecting to checkout for " + user + "...");
         }
     </script>
 </body>
