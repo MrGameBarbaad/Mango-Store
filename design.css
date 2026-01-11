@@ -264,7 +264,6 @@ body {
     border-radius: 4px;
 }
 
-.cart-node { display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: right; }
 .node-main { display: block; color: #fff; font-weight: bold; font-size: 11px; }
 .node-sub { color: #ff9f43; font-size: 9px; font-weight: 800; }
 .cart-node-img img { width: 34px; height: 34px; border-radius: 4px; border: 1px solid #444; }
@@ -407,4 +406,18 @@ body {
     top: 15px;
     right: 15px !important; /* This keeps it inside the corner with a small gap */
     z-index: 1000;
+}
+
+.cart-node {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-node-text {
+    text-align: right;
+    margin-right: 10px;
 }
