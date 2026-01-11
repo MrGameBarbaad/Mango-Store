@@ -397,13 +397,6 @@ body {
     padding: 0;
 }
 
-.cart-wrapper {
-    position: absolute;
-    top: 15px;
-    right: 15px !important; /* This keeps it inside the corner with a small gap */
-    z-index: 1000;
-}
-
 .cart-node {
     display: flex;
     align-items: center;
@@ -416,4 +409,11 @@ body {
 .cart-node-text {
     text-align: right;
     margin-right: 10px;
+}
+
+.cart-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px !important; /* Changed from negative to positive 20px */
+    z-index: 1000;
 }
