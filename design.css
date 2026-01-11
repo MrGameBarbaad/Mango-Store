@@ -417,3 +417,36 @@ body {
     right: 20px !important; /* Changed from negative to positive 20px */
     z-index: 1000;
 }
+
+/* Cart Modal Footer */
+.cart-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Checkout Button Style */
+.checkout-btn {
+    background: #ff9f43; /* Bright orange */
+    color: #1a1a1e;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.2s ease;
+    width: 100%; /* Makes it easy to click on mobile */
+}
+
+.checkout-btn:hover {
+    background: #ffae5c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 159, 67, 0.3);
+}
+
+.checkout-btn:active {
+    transform: translateY(0);
+}
