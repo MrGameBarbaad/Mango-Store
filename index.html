@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MangoMC Store</title>
-    <link rel="stylesheet" href="design.css?v=305">
+    <link rel="stylesheet" href="design.css">
 </head>
 <body>
 
     <header class="top-section">
-        <div class="logo-container">
-            <img src="logo.png" alt="MangoMC Banner" class="logo">
-        </div>
-
         <div class="cart-wrapper">
             <div id="cart-logged-out" class="cart-node" onclick="showLogin()">
                 <div class="cart-node-text">
@@ -34,19 +30,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="logo-container">
+            <img src="logo.png" class="logo">
+        </div>
     </header>
 
     <div id="login-popup" class="modal-overlay hidden">
         <div class="login-card">
-            <h2 style="color:#fff; margin-bottom:10px;">Enter your username</h2>
-            <p style="color:#888; font-size:12px; margin-bottom:20px;">Please enter your Minecraft username to continue.</p>
-            <div class="login-input-row" style="background:#1a1a1e; display:flex; align-items:center; padding:5px 15px; border-radius:4px; margin-bottom:20px;">
-                <img src="https://minotar.net/helm/MHF_Question/32.png" id="live-head" class="input-avatar" style="width:24px; height:24px;">
-                <input type="text" id="mc-username" placeholder="Minecraft Username" oninput="updateLiveHead(this.value)" style="background:transparent; border:none; color:#fff; padding:12px; width:100%; outline:none;">
+            <h2 style="color:white; margin-bottom:15px;">Enter your username</h2>
+            <div style="background:#1a1a1e; display:flex; align-items:center; padding:5px 15px; border-radius:4px; margin-bottom:20px;">
+                <img src="https://minotar.net/helm/MHF_Question/32.png" id="live-head" style="width:24px; height:24px;">
+                <input type="text" id="mc-username" placeholder="Minecraft Username" oninput="updateLiveHead(this.value)" style="background:transparent; border:none; color:white; padding:12px; width:100%; outline:none;">
             </div>
-            <button class="btn-continue" onclick="performLogin()" style="background:#d37c15; color:#fff; border:none; width:100%; padding:12px; font-weight:bold; border-radius:4px; cursor:pointer;">CONTINUE</button>
-            
-            <div class="bedrock-toggle-container" style="display:flex; justify-content:center; align-items:center; gap:15px; margin-top:20px;">
+            <button onclick="performLogin()" style="background:#ff9f43; color:black; border:none; width:100%; padding:12px; font-weight:bold; border-radius:4px; cursor:pointer;">CONTINUE</button>
+            <div class="bedrock-toggle-container">
                 <span style="color:#888; font-size:12px;">Bedrock user?</span>
                 <div class="toggle-switch" onclick="toggleBedrock()">
                     <span id="bedrock-status">No</span>
@@ -58,24 +56,20 @@
 
     <div id="cart-menu" class="modal-overlay hidden">
         <div class="cart-card">
-            <div class="popup-header">
-                <img src="" id="popup-head" class="mini-head" style="width:40px; height:40px; border-radius:4px;">
-                <div class="popup-user-info">
-                  <span id="popup-name" style="color:#fff; font-weight:bold; display:block;">Player</span>
-                    <div class="popup-meta" style="font-size:11px; color:#666; margin-top:5px;">
+            <div style="display:flex; align-items:center; border-bottom:1px solid #333; padding-bottom:15px; text-align:left; gap:12px;">
+                <img src="" id="popup-head" style="width:40px; height:40px; border-radius:4px;">
+                <div>
+                  <span id="popup-name" style="color:white; font-weight:bold; display:block;">Player</span>
+                    <div style="font-size:11px; color:#666; margin-top:4px;">
                         Currency: 
-                        <b class="currency-opt active" onclick="setCurrency(this)">Dollars</b> / 
-                        <b class="currency-opt" onclick="setCurrency(this)">Coins</b>
+                        <b class="currency-opt active" onclick="setCurrency(this)" style="cursor:pointer;">Dollars</b> / 
+                        <b class="currency-opt" onclick="setCurrency(this)" style="cursor:pointer;">Coins</b>
                     </div>
                 </div>
-                <span class="close-popup" onclick="toggleCartMenu()" style="position:absolute; right:20px; top:15px; cursor:pointer; font-size:24px; color:#444;">×</span>
+                <span onclick="toggleCartMenu()" style="position:absolute; right:20px; top:15px; cursor:pointer; color:#444; font-size:24px;">×</span>
             </div>
-            <div class="popup-content" style="margin-top:20px; text-align:left;">
-                <div id="cart-status-msg">Your cart is currently empty.</div>
-                <div class="cart-footer">
-                    <button class="checkout-btn" onclick="processCheckout()">CHECKOUT</button>
-                </div>
-            </div>
+            <div id="cart-status-msg" style="padding:30px 0; color:#888; text-align:left;">Your cart is currently empty.</div>
+            <button onclick="processCheckout()" style="background:#ff9f43; color:black; border:none; padding:15px; width:100%; border-radius:4px; font-weight:bold; cursor:pointer; text-transform:uppercase;">CHECKOUT</button>
         </div>
     </div>
 
@@ -91,12 +85,10 @@
         <main class="main-content">
             <h2 class="main-title">FEATURED PACKAGES</h2>
     
-            <div class="package-row">
+            <div class="package-row" style="border-color: #4caf50;">
                 <img src="ranks.png" class="package-img">
-                <div class="package-info" style="flex-grow:1;">
-                    <span class="package-name">GOD Rank (+3600 Coins)</span>
-                    <span class="package-price">$27.00 / 2,700 Coins</span>
-                </div>
+                <span class="package-name">GOD Rank (+3600 Coins)</span>
+                <span class="package-price">$27.00 / 2,700 Coins</span>
                 <button class="buy-btn" id="btn-rank_god" onclick="addToCart('GOD Rank', 27.00, 2700, 'ranks', 'rank_god')">BUY</button>
             </div>
 
@@ -118,7 +110,7 @@
                     <button class="red-btn">Privacy Policy</button>
                 </div>
 
-                <div class="info-header" style="margin-top:30px;">🎁 GIFTCARD BALANCE</div>
+                <div class="info-header" style="margin-top:25px;">🎁 GIFTCARD BALANCE</div>
                 <div class="giftcard-box">
                     <input type="text" class="gift-input" placeholder="Card Number">
                     <button class="check-btn">check</button>
@@ -166,12 +158,7 @@
         }
 
         function addToCart(name, usd, coins, category, id = null) {
-            const user = localStorage.getItem('mc_username');
-            if (!user) {
-                showLogin();
-                return;
-            }
-
+            if (!localStorage.getItem('mc_username')) { showLogin(); return; }
             if (category === 'ranks' && id === ownedRankId) return alert("You already own this rank!");
 
             if (category === 'ranks') {
@@ -190,7 +177,7 @@
             const msg = document.getElementById('cart-status-msg');
             const totalHeader = document.getElementById('cart-total-header');
             if (cart.length === 0) {
-                msg.innerHTML = '<div style="padding:20px; color:#888;">Your cart is empty.</div>';
+                msg.innerHTML = "Your cart is currently empty.";
                 totalHeader.innerText = "EMPTY CART";
                 return;
             }
@@ -203,14 +190,12 @@
             cart.forEach((item, index) => {
                 let price = activeCurrency === "Dollars" ? item.usd : item.coins;
                 total += (price * item.qty);
-                html += `<li style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #333;">
-                    <span style="font-size:13px; color:#fff;">${item.qty}x ${item.name}</span>
-                    <span style="font-size:13px; color:#ff9f43;">${symbol}${(price * item.qty).toLocaleString()}${suffix} 
-                        <b onclick="removeItem(${index})" style="color:#ff4757; cursor:pointer; margin-left:10px; font-size:10px;">[REMOVE]</b>
-                    </span>
+                html += `<li style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid #333; font-size:13px; color:white;">
+                    <span>${item.qty}x ${item.name}</span>
+                    <span>${symbol}${(price * item.qty).toLocaleString()}${suffix} <b onclick="removeItem(${index})" style="color:#ff4757; cursor:pointer; margin-left:10px;">[X]</b></span>
                 </li>`;
             });
-            html += `</ul><div style="text-align:right; color:#fff; font-weight:bold; margin-top:20px; font-size:16px;">TOTAL: <span style="color:#ff9f43;">${symbol}${total.toLocaleString()}${suffix}</span></div>`;
+            html += `</ul><div style="text-align:right; color:#ff9f43; font-weight:bold; margin-top:15px; font-size:16px;">TOTAL: ${symbol}${total.toLocaleString()}${suffix}</div>`;
             msg.innerHTML = html;
             totalHeader.innerText = `${symbol}${total.toLocaleString()}${suffix}`;
         }
@@ -226,11 +211,11 @@
                     if (btn.id === 'btn-' + ownedRankId) {
                         btn.innerText = "OWNED";
                         btn.disabled = true;
-                        btn.classList.add('owned');
+                        btn.className = "buy-btn owned";
                     } else {
                         btn.innerText = "BUY";
                         btn.disabled = false;
-                        btn.classList.remove('owned');
+                        btn.className = "buy-btn";
                     }
                 }
             });
@@ -238,54 +223,37 @@
 
         async function processCheckout() {
             const user = localStorage.getItem('mc_username');
-            if (!user || cart.length === 0) return alert("Please login and add items to your cart!");
+            if (!user || cart.length === 0) return alert("Add items to checkout!");
             
             let total = 0;
-            let itemList = "";
+            let items = "";
             let newRankId = null;
-            cart.forEach(item => {
-                let p = activeCurrency === "Dollars" ? item.usd : item.coins;
-                total += (p * item.qty);
-                itemList += `• ${item.qty}x ${item.name}\n`;
-                if (item.category === 'ranks') newRankId = item.id;
+            cart.forEach(i => {
+                let p = activeCurrency === "Dollars" ? i.usd : i.coins;
+                total += (p * i.qty);
+                items += `• ${i.qty}x ${i.name}\n`;
+                if (i.category === 'ranks') newRankId = i.id;
             });
 
-            const webhookBody = {
+            const data = {
                 embeds: [{
-                    title: "🛒 New Purchase Request",
-                    color: activeCurrency === "Dollars" ? 4388144 : 16752448,
-                    thumbnail: { url: `https://minotar.net/helm/${user}/64.png` },
+                    title: "🛒 Order Request",
+                    color: activeCurrency === "Dollars" ? 3066993 : 15105570,
                     fields: [
-                        { name: "Player", value: `**${user}** ${isBedrock ? "(Bedrock)" : "(Java)"}`, inline: true },
+                        { name: "Player", value: user + (isBedrock ? " (Bedrock)" : ""), inline: true },
                         { name: "Currency", value: activeCurrency, inline: true },
-                        { name: "Items", value: itemList },
-                        { name: "Total Amount", value: activeCurrency === "Dollars" ? `$${total.toFixed(2)}` : `${total.toLocaleString()} Coins` }
-                    ],
-                    footer: { text: "MangoMC Store Logic" }
+                        { name: "Total", value: activeCurrency === "Dollars" ? `$${total}` : `${total} Coins` },
+                        { name: "Items", value: items }
+                    ]
                 }]
             };
 
             try {
-                // Replace with your actual Discord Webhook URL
-                await fetch('YOUR_DISCORD_WEBHOOK_URL', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(webhookBody)
-                });
-
-                if (newRankId) {
-                    ownedRankId = newRankId;
-                    localStorage.setItem('owned_rank_id', newRankId);
-                    updateRankUI();
-                }
-
-                alert("Checkout successful! Your order has been sent for processing.");
-                cart = [];
-                updateCartDisplay();
-                toggleCartMenu();
-            } catch (e) {
-                alert("There was an error connecting to the checkout server.");
-            }
+                await fetch('YOUR_DISCORD_WEBHOOK_URL', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
+                if (newRankId) { ownedRankId = newRankId; localStorage.setItem('owned_rank_id', newRankId); updateRankUI(); }
+                alert("Order Sent!");
+                cart = []; updateCartDisplay(); toggleCartMenu();
+            } catch (e) { alert("Error!"); }
         }
 
         function toggleBedrock() {
@@ -293,12 +261,7 @@
             document.getElementById('bedrock-status').innerText = isBedrock ? "Yes" : "No";
             document.getElementById('toggle-slider').className = isBedrock ? "slider-green" : "slider-red";
         }
-
-        function updateLiveHead(val) {
-            const head = document.getElementById('live-head');
-            head.src = val.trim() === "" ? "https://minotar.net/helm/MHF_Question/32.png" : `https://minotar.net/helm/${val.trim()}/32.png`;
-        }
-
+        function updateLiveHead(v) { document.getElementById('live-head').src = v.trim() === "" ? "https://minotar.net/helm/MHF_Question/32.png" : `https://minotar.net/helm/${v.trim()}/32.png`; }
         function showLogin() { document.getElementById('login-popup').classList.remove('hidden'); }
         function toggleCartMenu() { document.getElementById('cart-menu').classList.toggle('hidden'); }
     </script>
