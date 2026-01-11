@@ -201,6 +201,11 @@
             document.querySelectorAll('.currency-opt').forEach(opt => opt.classList.remove('active'));
             element.classList.add('active');
         }
+
+        function addToCart(itemName) {
+            alert(itemName + " has been added to your cart!");
+            toggleCartMenu(); // Opens the cart so they can see it
+        }
     </script>
 </body>
 </html>
