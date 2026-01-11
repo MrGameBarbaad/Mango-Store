@@ -1,33 +1,41 @@
 /* ============================================================
-   MANGOMC - 100% RESTORED WIDE DESIGN
+   MANGOMC - FULL RESTORED MASTER CSS (LONG VERSION)
    ============================================================ */
 
+/* --- ROOT & BASE STYLES --- */
 body {
     background-color: #1a1a1d;
     color: white;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
 }
 
-/* --- TOP SECTION --- */
+/* --- HEADER & BANNER SECTION --- */
 .top-section {
     position: relative;
     width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.logo-container {
+    width: 100%;
 }
 
 .logo-container img {
     width: 100%;
-    height: auto;
     display: block;
+    height: auto;
 }
 
-/* --- CART POSITION (TOP RIGHT) --- */
+/* --- FLOATING CART NODE --- */
 .cart-wrapper {
     position: absolute;
-    top: 20px;
-    right: 30px !important;
+    top: 25px;
+    right: 25px !important;
     z-index: 1000;
 }
 
@@ -35,143 +43,386 @@ body {
     display: flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
-    padding: 8px 18px;
+    padding: 8px 15px;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.node-main { display: block; font-weight: bold; font-size: 12px; color: #fff; }
-.node-sub { display: block; font-size: 10px; color: #ff9f43; font-weight: 800; text-transform: uppercase; }
+.cart-node:hover {
+    background: rgba(40, 40, 45, 0.8);
+    border-color: rgba(255, 159, 67, 0.5);
+}
 
-/* --- MAIN LAYOUT WRAPPER --- */
+.cart-node-text {
+    text-align: right;
+    margin-right: 12px;
+}
+
+.node-main {
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.node-sub {
+    display: block;
+    color: #ff9f43;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cart-node-img img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+/* --- MAIN LAYOUT STRUCTURE --- */
 .wrapper {
     display: flex;
-    max-width: 1200px; /* Increased width to make it "Big" again */
+    max-width: 1100px;
     margin: 0 auto;
-    gap: 30px; /* More space between sidebar and content */
-    padding: 40px 20px;
+    gap: 20px;
+    padding: 25px 0 60px 0;
 }
 
-/* --- SIDEBAR --- */
+/* --- SIDEBAR NAVIGATION --- */
 .sidebar {
     background-color: #212126;
-    width: 280px;
-    padding: 25px 15px;
-    border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    width: 260px;
+    padding: 15px 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     align-self: flex-start;
 }
 
 .sidebar-header {
     color: #ff9f43;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
-    margin-bottom: 15px;
-    padding-left: 15px;
-    letter-spacing: 1.5px;
+    padding: 10px 15px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 10px;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    padding: 14px 15px;
+    padding: 12px 15px;
     cursor: pointer;
     border-radius: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     transition: 0.2s;
     color: #b0b0b0;
+    font-size: 13px;
 }
 
-.nav-item:hover { background: #2a2a30; color: #fff; }
-.cat-icon { width: 22px; height: 22px; margin-right: 15px; }
+.nav-item:hover {
+    background: #2a2a30;
+    color: #ffffff;
+}
 
-/* --- FEATURED PACKAGES --- */
-.main-content { flex: 1; }
+.nav-item.active {
+    background: #2a2a30;
+    color: #ff9f43;
+}
+
+.cat-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+    flex: 1;
+}
 
 .main-title {
     color: #ff9f43;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 1px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: 800;
 }
 
+/* --- PACKAGE ROW STYLING --- */
 .package-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #212126;
-    padding: 20px 25px;
-    margin-bottom: 15px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
     border-radius: 4px;
-    border-left: 4px solid #4caf50; /* Green rank indicator */
+    border-left: 3px solid #444; 
+    transition: transform 0.2s;
 }
 
-.package-img { width: 45px; height: 45px; margin-right: 25px; object-fit: contain; }
-.package-name { font-weight: bold; font-size: 16px; color: #4caf50; flex-grow: 1; }
-.package-price { color: #888; font-size: 12px; margin-top: 5px; }
+.package-row:hover {
+    background-color: #25252b;
+}
 
-/* 3D Green Buy Button */
+.package-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+.package-info {
+    flex-grow: 1;
+}
+
+.package-name { 
+    font-weight: bold; 
+    font-size: 14px; 
+    color: #4caf50; 
+}
+
+.package-price { 
+    color: #888; 
+    font-size: 11px; 
+    margin-left: 8px;
+}
+
+/* --- BUTTONS --- */
 .buy-btn {
     background: #4caf50;
     color: white;
     border: none;
-    padding: 10px 30px;
+    padding: 8px 25px;
     border-radius: 4px;
-    font-weight: 900;
-    font-size: 13px;
+    font-weight: 800;
+    font-size: 11px;
     text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 4px 0 #2d6630;
+    box-shadow: 0 3px 0 #2d6630;
     transition: 0.1s;
-    margin-left: 20px;
 }
 
-.buy-btn:hover { background: #45a049; transform: translateY(-2px); box-shadow: 0 6px 0 #2d6630; }
-.buy-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #2d6630; }
+.buy-btn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 #2d6630;
+}
 
-/* --- INFORMATION SECTION (BOTTOM BOX) --- */
+.buy-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 #2d6630;
+}
+
+.buy-btn.owned {
+    background: #444 !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    color: #888;
+}
+
+/* --- INFORMATION SECTION (BOTTOM) --- */
 .info-section {
     background-color: #212126;
-    padding: 35px;
+    padding: 30px;
     border-radius: 4px;
-    margin-top: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    margin-top: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.info-header { color: #ff9f43; font-size: 10px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
-.info-title { font-size: 18px; color: #ff9f43; margin-bottom: 20px; font-weight: 900; }
-.info-section p { color: #b0b0b0; font-size: 12px; line-height: 1.8; margin-bottom: 15px; }
+.info-header { 
+    color: #ff9f43; 
+    font-size: 9px; 
+    font-weight: 900; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+}
 
-/* Modal & Cart Card Styles */
+.info-title { 
+    font-size: 15px; 
+    color: #ff9f43; 
+    margin: 4px 0 12px 0; 
+    font-weight: 900; 
+}
+
+.info-section p { 
+    color: #b0b0b0; 
+    font-size: 10.5px; 
+    line-height: 1.8; 
+    margin-bottom: 12px; 
+}
+
+/* Information Action Buttons */
+.button-row { 
+    display: flex; 
+    gap: 8px; 
+    margin-top: 20px; 
+}
+
+.red-btn {
+    flex: 1; 
+    background-color: #ff4757; 
+    color: white; 
+    border: none;
+    padding: 12px 5px; 
+    font-size: 9.5px; 
+    font-weight: 800; 
+    border-radius: 4px; 
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.red-btn:hover {
+    background-color: #ff6b81;
+}
+
+.discord-btn {
+    background-color: #f39c12; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px;
+    font-size: 10.5px; 
+    font-weight: 800; 
+    border-radius: 4px; 
+    margin: 10px 0 20px 0; 
+    cursor: pointer;
+}
+
+/* Giftcard Balance Tool */
+.giftcard-box { 
+    display: flex; 
+    background-color: #16161a; 
+    border-radius: 4px; 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.gift-input { 
+    background: transparent; 
+    border: none; 
+    color: #fff; 
+    padding: 10px 15px; 
+    flex: 1; 
+    font-size: 12px; 
+    outline: none; 
+}
+
+.check-btn { 
+    background-color: #2ecc71; 
+    color: white; 
+    border: none; 
+    padding: 0 20px; 
+    font-size: 10px; 
+    font-weight: 800; 
+    cursor: pointer; 
+}
+
+/* --- MODAL SYSTEM (CART & LOGIN) --- */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: flex; align-items: center; justify-content: center; z-index: 2000;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 2000;
 }
-.cart-card, .login-card {
+
+.login-card, .cart-card {
     background: #25252b;
-    padding: 40px;
+    padding: 35px;
     border-radius: 6px;
-    width: 450px;
+    width: 400px;
     border: 1px solid #333;
     position: relative;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
-.hidden { display: none !important; }
 
-/* Orange Buttons & Giftcards */
-.red-btn {
-    background-color: #ff4757; color: white; border: none; flex: 1;
-    padding: 14px; font-size: 11px; font-weight: 800; border-radius: 4px; cursor: pointer;
+.hidden { 
+    display: none !important; 
 }
-.discord-btn {
-    background-color: #f39c12; color: #fff; border: none; padding: 12px 25px;
-    font-size: 12px; font-weight: 800; border-radius: 4px; margin: 15px 0; cursor: pointer;
+
+/* Currency Toggles in Cart */
+.currency-opt {
+    cursor: pointer;
+    padding: 2px 6px;
+    transition: 0.2s;
 }
-.giftcard-box { display: flex; background: #16161a; border-radius: 4px; border: 1px solid #333; margin-top: 10px; overflow: hidden; }
-.gift-input { background: transparent; border: none; color: #fff; padding: 12px; flex: 1; font-size: 13px; outline: none; }
-.check-btn { background: #2ecc71; color: white; border: none; padding: 0 25px; font-weight: 800; cursor: pointer; }
+
+.currency-opt.active {
+    color: #ff9f43;
+    text-decoration: underline;
+}
+
+/* Bedrock Toggle UI */
+.bedrock-toggle-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 12px; 
+    margin-top: 25px; 
+}
+
+.toggle-switch { 
+    width: 60px; 
+    height: 24px; 
+    background: #1a1a1e; 
+    border-radius: 4px; 
+    position: relative; 
+    cursor: pointer; 
+}
+
+#toggle-slider { 
+    position: absolute; 
+    top: 2px; 
+    width: 26px; 
+    height: 20px; 
+    border-radius: 2px; 
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+
+.slider-red { 
+    left: 2px; 
+    background: #ff4757; 
+}
+
+.slider-green { 
+    left: 32px; 
+    background: #2ecc71; 
+}
+
+#bedrock-status { 
+    position: absolute; 
+    z-index: 5; 
+    color: #fff; 
+    font-size: 10px; 
+    width: 100%; 
+    text-align: center; 
+    line-height: 24px; 
+    pointer-events: none; 
+    font-weight: bold; 
+}
+
+/* Checkout Button */
+.checkout-btn {
+    background: #ff9f43; 
+    color: #1a1a1e; 
+    border: none; 
+    padding: 15px; 
+    width: 100%; 
+    border-radius: 4px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    text-transform: uppercase;
+    margin-top: 20px;
+}
