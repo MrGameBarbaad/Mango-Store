@@ -204,15 +204,66 @@
             toggleCartMenu();
         }
 
+        let currentCartItem = "";
+
+        function addToCart(itemName) {
+            currentCartItem = itemName;
+            document.getElementById('cart-status-msg').innerHTML = `<span style="color:#4caf50; font-weight:bold;">1x ${itemName}</span>`;
+            alert(itemName + " added to cart!");
+            toggleCartMenu();
+        }
+
         function processCheckout() {
             const user = localStorage.getItem('mc_username');
+            const currency = document.querySelector('.currency-opt.active').innerText;
+            const webhookURL = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
+
             if (!user) {
-                alert("Please login first!");
-                showLogin();
-                return;
-            }
-            alert("Redirecting to checkout for " + user + "...");
+            alert("Please login first!");
+            showLogin();
+            return;
         }
+
+        if (currentCartItem === "") {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        // Data to send to Discord
+            const discordData = {
+            embeds: [{
+            title: "🛒 New Store Order!",
+            color: 16752451, // Orange color
+            thumbnail: { url: `https://minotar.net/helm/${user}/64.png` },
+            fields: [
+                { name: "Player", value: user, inline: true },
+                { name: "Item", value: currentCartItem, inline: true },
+                { name: "Payment Method", value: currency, inline: true },
+                { name: "Time", value: new Date().toLocaleString(), inline: false }
+            ],
+            footer: { text: "MangoMC Store Logs" }
+            }]
+        };
+
+        // Send the data to Discord
+        fetch(webhookURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(discordData)
+        })
+            .then(() => {
+            alert("Order Placed Successfully! Check Discord.");
+        
+        // CLEAR THE CART AFTER SUCCESS
+            currentCartItem = "";
+            document.getElementById('cart-status-msg').innerText = "Your cart is currently empty. Add items to proceed!";
+            toggleCartMenu();
+        })
+            .catch(err => {
+            console.error(err);
+            alert("Error sending order to Discord.");
+        });
+        } 
     </script>
 </body>
 </html>
