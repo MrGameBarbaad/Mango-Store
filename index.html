@@ -136,18 +136,46 @@
     <script>
         let isBedrock = false;
 
-        function toggleBedrock() {
-            isBedrock = !isBedrock;
-            const statusText = document.getElementById('bedrock-status');
-            const slider = document.getElementById('toggle-slider');
-            
-            if (isBedrock) {
-                statusText.innerText = "Yes";
-                slider.className = "slider-green";
-            } else {
-                statusText.innerText = "No";
-                slider.className = "slider-red";
-            }
+// Check for saved login when the page loads
+window.onload = function() {
+    const savedUser = localStorage.getItem('mc_username');
+    if (savedUser) {
+        applyLoginState(savedUser);
+    }
+};
+
+function applyLoginState(user) {
+    document.getElementById('display-name').innerText = user + "'s Cart";
+    document.getElementById('popup-name').innerText = user + "'s Cart";
+    const headUrl = `https://minotar.net/helm/${user}/32.png`;
+    document.getElementById('user-head').src = headUrl;
+    document.getElementById('popup-head').src = headUrl;
+    
+    document.getElementById('cart-logged-out').classList.add('hidden');
+    document.getElementById('cart-logged-in').classList.remove('hidden');
+}
+
+function performLogin() {
+    const user = document.getElementById('mc-username').value;
+    if(user.trim() !== "") {
+        localStorage.setItem('mc_username', user.trim()); // Save to browser
+        applyLoginState(user.trim());
+        hideLogin();
+    }
+}
+
+function performLogout() {
+    localStorage.removeItem('mc_username'); // Clear memory
+    location.reload(); // Refresh to reset state
+}
+
+function setCurrency(element) {
+    document.querySelectorAll('.currency-opt').forEach(opt => opt.classList.remove('active'));
+    element.classList.add('active');
+}
+
+// Keep your existing toggleBedrock, updateLiveHead, showLogin, hideLogin, and toggleCartMenu functions below...
+
         }
 
         function updateLiveHead(val) {
